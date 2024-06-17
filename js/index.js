@@ -1,3 +1,4 @@
+
 document.addEventListener('DOMContentLoaded', () => {
     const openPopupButton = document.querySelector('#openPopupButton');
     const closePopupButton = document.querySelector('#closePopupButton');
@@ -91,7 +92,6 @@ document.addEventListener('DOMContentLoaded', () => {
         cardGrid.appendChild(card);
     };
 });
-
 
 
 

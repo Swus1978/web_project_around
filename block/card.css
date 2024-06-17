@@ -10,6 +10,10 @@
     height: 100vh;
 }
 
+.card__visually-hidden {
+    display: none;
+}
+
 .card-section__grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(282px, 1fr));

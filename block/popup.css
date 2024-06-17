@@ -36,10 +36,10 @@
     margin-bottom: 10px;
 }
 
-.button_type_save {
-    position: relative;
-    left: 35px;
-    top: 50px;
+.popup__button_type_save {
+    position: absolute;
+    left: 55px;
+    top: 250px;
     padding: 10px;
     background: #000;
     color: white;
@@ -52,6 +52,8 @@
 .popup__image {
     max-width: 100%;
     margin-top: 10px;
+    width: 816px;
+    height: 540px;
 }
 
 .popup__title {
@@ -69,4 +71,8 @@
 .popup__load {
     border-style: none;
     border-bottom-style: solid;
+}
+
+.popup__visually-hidden {
+    display: none;
 }
