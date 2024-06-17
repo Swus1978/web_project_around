@@ -1,0 +1,152 @@
+.logo {
+    position: relative;
+    padding: 20px;
+
+}
+
+.logo__title {
+    position: relative;
+    top: 50px;
+    left: 280px;
+    font-size: 24px;
+    color: #fff;
+    margin: 0;
+}
+
+.logo__paragraph {
+    position: relative;
+    left: 380px;
+    color: #ccc;
+}
+
+.logo__line {
+    position: absolute;
+    left: 130px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 20px 0;
+}
+
+.logo__svg {
+    width: 882px;
+    height: 1px;
+}
+
+@media screen and (max-width: 1280px) {
+    .logo {
+        position: relative;
+        padding: 20px;
+
+    }
+
+    .logo__title {
+        position: relative;
+        top: 50px;
+        left: 280px;
+        font-size: 24px;
+        color: #fff;
+        margin-left: 10px;
+    }
+
+    .logo__paragraph {
+        position: relative;
+        left: 380px;
+        color: #ccc;
+    }
+
+    .logo__line {
+        position: absolute;
+        left: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        margin: 20px 0;
+    }
+
+    .logo__svg {
+        width: 882px;
+        height: 1px;
+    }
+}
+
+@media screen and (max-width:1024px) {
+    .logo__title {
+        left: 220px;
+    }
+
+    .logo__paragraph {
+        left: 320px;
+    }
+
+    .logo__line {
+        left: 180px;
+    }
+}
+
+@media screen and (max-width: 764px) {
+    .logo {
+        position: relative;
+        left: 10px;
+        margin: 0 20px;
+    }
+
+    .logo__title {
+        left: 480px;
+    }
+
+    .logo__paragraph {
+        left: 580px;
+    }
+
+    .logo__line {
+        left: 150px;
+    }
+
+}
+
+@media screen and (max-width: 425px) {
+    .logo {
+        position: relative;
+        left: 0;
+        right: 0;
+        margin: 0 10px;
+
+    }
+
+    .logo__title {
+        left: 20px;
+    }
+
+    .logo__paragraph {
+        left: 0;
+    }
+
+    .logo__line {
+        left: 0;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .logo {
+        position: relative;
+        left: 0;
+        right: 0;
+        margin: 0 10px;
+
+    }
+
+    .logo__title {
+        left: 250px;
+    }
+
+    .logo__paragraph {
+        left: 360px;
+    }
+
+    .logo__line {
+        left: 50px;
+    }
+}
