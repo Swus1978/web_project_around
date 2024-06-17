@@ -118,14 +118,17 @@
 
     .logo__title {
         left: 20px;
+        right: 0;
     }
 
     .logo__paragraph {
         left: 0;
+        right: 0;
     }
 
     .logo__line {
         left: 0;
+        right: 0;
     }
 }
 

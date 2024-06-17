@@ -77,12 +77,6 @@
     margin-right: 30px;
 }
 
-@media screen and (max-width: 425px) {
-    .card-section {
-        left: 200px;
-    }
-}
-
 @media screen and (max-width: 764px) {
     .card-section {
         margin-top: 150px;
@@ -94,10 +88,18 @@
     }
 
     .card__trash-button {
-        position: relative;
         left: 220px;
     }
 }
+
+/* @media screen and (max-width: 425px) { */
+/* .card-section { */
+/* left: 50%; */
+/* right: 50%; */
+/* transform: translate(-50, -50); */
+/* margin-left: 200px; */
+/* } */
+/* } */
 
 @media screen and (max-width: 320px) {
     .card-section {
@@ -106,5 +108,11 @@
 
     .card-section__grid {
         gap: 30px;
+    }
+
+    .card__trash-button {
+        margin-right: 20px;
+        left: 190px;
+        right: 0;
     }
 }
