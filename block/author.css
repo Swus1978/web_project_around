@@ -1,5 +1,5 @@
 .author {
-    display: inline-block;
+    display: flex;
     max-width: 100%;
     padding: 0 20px;
     height: auto;
@@ -208,7 +208,7 @@
         top: 200px;
         left: 0;
         margin-left: 100px;
-        width: 172px;
+        width: 282px;
         height: 48px;
         font-size: 18px;
         font-weight: 400;
@@ -228,49 +228,35 @@
 
 @media screen and (max-width: 425px) {
     .author {
-        display: inline-block;
-        max-width: 100%;
-        padding: 0 20px;
-        height: auto;
-        line-height: 56px;
-        font-weight: 500;
-        font-size: 20px;
-
-    }
-
-    .author__title {
-        left: 0;
-        right: 0;
-    }
-
-    .author__text {
-        left: 0;
-        right: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
     }
 
     .author__image {
-        position: relative;
-        display: block;
-        justify-content: center;
-        align-items: center;
-        top: 180px;
-        left: 100px;
+        margin: 0 auto 10px auto;
+    }
+
+    .author__title,
+    .author__text,
+    .author__button {
+        left: auto;
+        right: auto;
     }
 
     .author__button {
-        left: 0;
         width: 282px;
         height: 48px;
     }
 
     .author__button-vector {
-        display: block;
-        top: 250px;
-        left: 0;
+        top: auto;
+        left: auto;
     }
-
-
 }
+
+
 
 @media screen and (max-width: 320px) {
     .author {
@@ -289,16 +275,22 @@
 
     .author__title {
         position: relative;
-        display: block;
+        display: inline-flex;
         top: 180px;
-        left: 220px;
+        left: 100px;
+        width: 224px;
+        height: 26.63px;
+        font-size: 22px;
     }
 
     .author__text {
         position: relative;
         display: block;
         top: 100px;
-        left: 230px;
+        left: 100px;
+        width: 282px;
+        height: 50px;
+        font-size: 14px;
     }
 
     .author__image {
@@ -307,26 +299,22 @@
         justify-content: center;
         align-items: center;
         top: 180px;
-        left: 280px;
+        left: 200px;
     }
 
     .author__button {
-        display: block;
-        top: 200px;
-        left: 140px;
-        margin-left: 100px;
+        left: 90px;
+        right: 0;
+        margin-left: 10px;
         width: 282px;
         height: 48px;
-        font-size: 18px;
-        font-weight: 400;
-        line-height: 21.78px;
     }
 
     .author__button-vector {
         display: block;
         top: 250px;
-        left: 140px;
-        margin-left: 380px;
+        left: 0;
+        right: 20px;
 
     }
 

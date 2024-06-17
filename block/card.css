@@ -92,14 +92,8 @@
     }
 }
 
-/* @media screen and (max-width: 425px) { */
-/* .card-section { */
-/* left: 50%; */
-/* right: 50%; */
-/* transform: translate(-50, -50); */
-/* margin-left: 200px; */
-/* } */
-/* } */
+@media screen and (max-width: 425px) {}
+
 
 @media screen and (max-width: 320px) {
     .card-section {

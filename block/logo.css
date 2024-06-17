@@ -94,41 +94,33 @@
     }
 
     .logo__title {
-        left: 480px;
+        left: 280px;
     }
 
     .logo__paragraph {
-        left: 580px;
+        left: 380px;
     }
 
     .logo__line {
-        left: 150px;
+        left: 50%;
+        right: 0;
+        transform: translate(-50, -50);
     }
 
 }
 
 @media screen and (max-width: 425px) {
-    .logo {
-        position: relative;
-        left: 0;
-        right: 0;
-        margin: 0 10px;
-
-    }
-
     .logo__title {
-        left: 20px;
-        right: 0;
+        right: 150px;
+        margin-right: 500px;
     }
 
     .logo__paragraph {
         left: 0;
-        right: 0;
     }
 
     .logo__line {
-        left: 0;
-        right: 0;
+        left: 250px;
     }
 }
 
@@ -150,6 +142,6 @@
     }
 
     .logo__line {
-        left: 50px;
+        left: 180px;
     }
 }
