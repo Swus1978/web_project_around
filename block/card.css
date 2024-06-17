@@ -40,7 +40,6 @@
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
-
 }
 
 .card-section__card-title {
@@ -68,7 +67,6 @@
 .card-section__card-button--heart {
     display: inline-block;
 }
-
 
 .card__trash-button {
     position: relative;
