@@ -46,6 +46,9 @@
 .card-section__card-title {
     padding-left: 10px;
     color: #000;
+    display: inline-block;
+    position: relative;
+    right: 50px;
 }
 
 .card-section__card-button {
@@ -55,11 +58,6 @@
     cursor: pointer;
 }
 
-.card-section__card-title {
-    display: inline-block;
-    position: relative;
-    right: 50px;
-}
 
 .card-section__card-button--heart {
     display: inline-block;
