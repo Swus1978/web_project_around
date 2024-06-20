@@ -51,8 +51,7 @@
 .card-section__card-button {
     padding: 10px 20px;
     color: #fff;
-    border: 1px solid #ffff;
-    /* <-- Fixed: Changed to #fff */
+    border: 1px solid #fff;
     cursor: pointer;
 }
 
@@ -78,7 +77,6 @@
 @media screen and (max-width: 764px) {
     .card-section__grid {
         gap: 30px;
-        /* <-- Changed: Updated to 'gap' property */
     }
 }
 
@@ -87,9 +85,7 @@
         width: 100%;
         margin-top: 950px;
         margin-left: 0;
-        /* <-- Added: Reset margin-left */
         margin-right: 0;
-        /* <-- Added: Reset margin-right */
     }
 
     .card-section__grid {
@@ -103,8 +99,6 @@
     .card-section__card-img {
         height: auto;
         width: 100%;
-        top: 0;
-        /* <-- Removed: 'top' property is not valid for this context */
     }
 
     .card-section__card-title,
@@ -122,7 +116,6 @@
         margin-left: 160px;
         margin-top: 550px;
         margin-right: 0;
-        /* <-- Added: Reset margin-right */
     }
 
     .card-section__grid {
