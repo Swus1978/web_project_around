@@ -10,9 +10,9 @@
 .footer__title {
     display: inline-flex;
     position: absolute;
-    left: 580px;
+    left: 280px;
     right: 0;
-    top: 1500px;
+    top: 1000px;
     bottom: 0;
     width: 282px;
     height: 14px;
@@ -24,7 +24,7 @@
         margin-top: 500px;
         left: 0;
         right: 0;
-        margin-left: 500px;
+        margin-left: 600px;
     }
 }
 

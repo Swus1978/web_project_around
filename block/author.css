@@ -114,23 +114,15 @@
         width: 224px;
         height: 50px;
         top: 590px;
-        right: 0;
-        left: 0;
-    }
-
-    .author__title {
-        width: 196px;
-        height: 22px;
-        font-size: 22px;
-        line-height: 26.63px;
-        top: 450px;
         left: 50%;
         transform: translateX(-50%);
     }
 
-    .author__button {
-        width: 224px;
-        height: 50px;
+    .author__title {
+        width: 196px;
+        font-size: 22px;
+        line-height: 26.63px;
+        top: 450px;
         left: 50%;
         transform: translateX(-50%);
     }
@@ -158,24 +150,18 @@
         width: 282px;
         height: 50px;
         top: 590px;
-        right: 0;
         left: 0;
+        transform: translateX(-90%);
     }
 
     .author__title {
         width: 196px;
-        height: 22px;
         font-size: 22px;
         line-height: 26.63px;
         top: 450px;
         left: 50%;
         margin-left: 200px;
         transform: translateX(-50%);
-    }
-
-    .author__button {
-        left: 0%;
-        transform: translateX(-90%);
     }
 
     .author__image {

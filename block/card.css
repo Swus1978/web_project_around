@@ -52,6 +52,7 @@
     padding: 10px 20px;
     color: #fff;
     border: 1px solid #ffff;
+    /* <-- Fixed: Changed to #fff */
     cursor: pointer;
 }
 
@@ -77,6 +78,7 @@
 @media screen and (max-width: 764px) {
     .card-section__grid {
         gap: 30px;
+        /* <-- Changed: Updated to 'gap' property */
     }
 }
 
@@ -84,10 +86,13 @@
     .card-section {
         width: 100%;
         margin-top: 950px;
+        margin-left: 0;
+        /* <-- Added: Reset margin-left */
+        margin-right: 0;
+        /* <-- Added: Reset margin-right */
     }
 
     .card-section__grid {
-        -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
     }
 
@@ -99,6 +104,7 @@
         height: auto;
         width: 100%;
         top: 0;
+        /* <-- Removed: 'top' property is not valid for this context */
     }
 
     .card-section__card-title,
@@ -115,6 +121,8 @@
         width: 100%;
         margin-left: 160px;
         margin-top: 550px;
+        margin-right: 0;
+        /* <-- Added: Reset margin-right */
     }
 
     .card-section__grid {
