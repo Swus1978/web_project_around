@@ -1,0 +1,35 @@
+.footer {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 100px;
+    height: 100vh;
+}
+
+.footer__title {
+    display: inline-flex;
+    position: absolute;
+    left: 580px;
+    right: 0;
+    top: 1500px;
+    bottom: 0;
+    width: 282px;
+    height: 14px;
+
+}
+
+@media screen and (max-width: 764px) {
+    .footer__title {
+        margin-top: 500px;
+        left: 0;
+        right: 0;
+        margin-left: 500px;
+    }
+}
+
+@media screen and (min-width: 425px) {
+    .footer__title {
+        margin-left: 250px;
+    }
+}

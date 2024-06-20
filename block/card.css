@@ -2,22 +2,19 @@
     position: relative;
     align-items: center;
     justify-content: center;
-    top: 90px;
-    left: 20%;
     width: 100%;
     max-width: 1000px;
     padding: 20px;
-    height: 100vh;
-}
-
-.card__visually-hidden {
-    display: none;
+    margin-top: 280px;
+    margin-left: 180px;
 }
 
 .card-section__grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(282px, 1fr));
-    gap: 60px;
+    grid-template-rows: 1fr minmax(min-content, 282px);
+    justify-content: center;
+    grid-row-gap: 40px;
 }
 
 .card-section__card {
@@ -29,6 +26,10 @@
     border-radius: 8px;
     text-align: center;
     margin: 0 auto;
+}
+
+.card__visually-hidden {
+    display: none;
 }
 
 .card-section__card-img {
@@ -54,10 +55,6 @@
     cursor: pointer;
 }
 
-.card-section__card-button:hover {
-    color: #0056b3;
-}
-
 .card-section__card-title {
     display: inline-block;
     position: relative;
@@ -78,35 +75,79 @@
 }
 
 @media screen and (max-width: 764px) {
-    .card-section {
-        margin-top: 150px;
-        padding: 90px;
-    }
-
     .card-section__grid {
         gap: 30px;
     }
-
-    .card__trash-button {
-        left: 220px;
-    }
 }
 
-@media screen and (max-width: 425px) {}
+@media screen and (max-width: 425px) {
+    .card-section {
+        width: 100%;
+        margin-top: 1050px;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .card-section__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .card-section__card {
+        max-width: 100%;
+    }
+
+    .card-section__card-img {
+        height: auto;
+        width: 100%;
+    }
+
+    .card-section__card-title,
+    .card-section__card-button,
+    .card__trash-button {
+        position: relative;
+        right: auto;
+        left: auto;
+    }
+}
 
 
 @media screen and (max-width: 320px) {
     .card-section {
-        margin-top: 150px;
+        width: 100%;
+        margin-left: 160px;
+        margin-top: 550px;
     }
 
     .card-section__grid {
-        gap: 30px;
+        grid-template-columns: 1fr;
+    }
+
+    .card-section__card {
+        max-width: 100%;
+    }
+
+    .card-section__card-img {
+        height: auto;
+        width: 100%;
+    }
+
+    .card-section__card-title {
+        position: relative;
+        right: auto;
+        left: auto;
+
+    }
+
+    .card-section__card-button {
+        position: relative;
+        right: auto;
+        left: auto;
+
     }
 
     .card__trash-button {
-        margin-right: 20px;
-        left: 190px;
-        right: 0;
+        position: relative;
+        top: 10px;
+        left: 0;
     }
 }

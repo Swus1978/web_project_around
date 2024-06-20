@@ -7,21 +7,31 @@
 .logo__title {
     position: relative;
     top: 50px;
-    left: 280px;
+    left: 240px;
     font-size: 24px;
     color: #fff;
-    margin: 0;
+    margin-left: 10px;
+}
+
+.logo__line {
+    position: absolute;
+    left: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 20px 0;
 }
 
 .logo__paragraph {
     position: relative;
-    left: 380px;
+    left: 340px;
     color: #ccc;
 }
 
 .logo__line {
     position: absolute;
-    left: 130px;
+    left: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -44,7 +54,7 @@
     .logo__title {
         position: relative;
         top: 50px;
-        left: 280px;
+        left: 240px;
         font-size: 24px;
         color: #fff;
         margin-left: 10px;
@@ -52,13 +62,13 @@
 
     .logo__paragraph {
         position: relative;
-        left: 380px;
+        left: 340px;
         color: #ccc;
     }
 
     .logo__line {
         position: absolute;
-        left: 100px;
+        left: 50px;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -87,22 +97,17 @@
 }
 
 @media screen and (max-width: 764px) {
-    .logo {
-        position: relative;
-        left: 10px;
-        margin: 0 20px;
-    }
 
     .logo__title {
-        left: 280px;
+        left: 230px;
     }
 
     .logo__paragraph {
-        left: 380px;
+        left: 330px;
     }
 
     .logo__line {
-        left: 50%;
+        left: 30%;
         right: 0;
         transform: translate(-50, -50);
     }
