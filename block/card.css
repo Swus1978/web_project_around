@@ -51,7 +51,7 @@
 .card-section__card-button {
     padding: 10px 20px;
     color: #fff;
-    border: #000;
+    border: 1px solid #ffff;
     cursor: pointer;
 }
 
@@ -83,12 +83,11 @@
 @media screen and (max-width: 425px) {
     .card-section {
         width: 100%;
-        margin-top: 1050px;
-        margin-left: 0;
-        margin-right: 0;
+        margin-top: 950px;
     }
 
     .card-section__grid {
+        -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
     }
 
@@ -99,6 +98,7 @@
     .card-section__card-img {
         height: auto;
         width: 100%;
+        top: 0;
     }
 
     .card-section__card-title,
@@ -109,7 +109,6 @@
         left: auto;
     }
 }
-
 
 @media screen and (max-width: 320px) {
     .card-section {
@@ -135,14 +134,12 @@
         position: relative;
         right: auto;
         left: auto;
-
     }
 
     .card-section__card-button {
         position: relative;
         right: auto;
         left: auto;
-
     }
 
     .card__trash-button {

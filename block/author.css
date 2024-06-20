@@ -62,16 +62,6 @@
     margin-left: 295px;
 }
 
-.author__pen {
-
-    position: absolute;
-    bottom: 0;
-    top: 5px;
-    right: 7.5px;
-    width: 10px;
-    height: 10px;
-}
-
 .author__image {
     position: absolute;
     left: 230px;
@@ -110,7 +100,7 @@
     }
 
     .author__button {
-        width: 358px;
+        width: 224px;
         height: 50.15px;
         left: 0;
         right: 0;
@@ -134,20 +124,19 @@
         font-size: 22px;
         line-height: 26.63px;
         top: 450px;
-        left: 100%;
+        left: 50%;
         transform: translateX(-50%);
     }
 
     .author__button {
         width: 224px;
         height: 50px;
-        margin-left: 0;
-        left: 105%;
+        left: 50%;
         transform: translateX(-50%);
     }
 
     .author__image {
-        left: 100%;
+        left: 50%;
         transform: translateX(-50%);
     }
 
@@ -159,8 +148,7 @@
     }
 
     .author__button-vector {
-        left: 140%;
-        top: 450px;
+        left: 50%;
         transform: translateX(-50%);
     }
 }
@@ -180,31 +168,31 @@
         font-size: 22px;
         line-height: 26.63px;
         top: 450px;
-        left: 100%;
+        left: 50%;
+        margin-left: 200px;
         transform: translateX(-50%);
     }
 
     .author__button {
-        margin-left: 0;
-        left: 105%;
-        transform: translateX(-50%);
+        left: 0%;
+        transform: translateX(-90%);
     }
 
     .author__image {
-        left: 100%;
+        left: 110%;
         transform: translateX(-50%);
     }
 
     .author__text {
         top: 500px;
-        left: 10%;
+        left: 20%;
         transform: translateX(-50%);
         width: 90%;
     }
 
     .author__button-vector {
-        left: 140%;
-        top: 450px;
+        top: 69%;
+        left: 150%;
         transform: translateX(-50%);
     }
 }

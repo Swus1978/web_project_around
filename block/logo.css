@@ -1,7 +1,7 @@
+/* General Logo Section Styling */
 .logo {
     position: relative;
     padding: 20px;
-
 }
 
 .logo__title {
@@ -21,6 +21,8 @@
     align-items: center;
     width: 100%;
     margin: 20px 0;
+    transform: translate(-50%, -50%);
+    /* Corrected usage of translate */
 }
 
 .logo__paragraph {
@@ -29,30 +31,18 @@
     color: #ccc;
 }
 
-.logo__line {
-    position: absolute;
-    left: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    margin: 20px 0;
-}
-
 .logo__svg {
     width: 882px;
     height: 1px;
 }
 
+/* Media Queries for Responsiveness */
 @media screen and (max-width: 1280px) {
     .logo {
-        position: relative;
         padding: 20px;
-
     }
 
     .logo__title {
-        position: relative;
         top: 50px;
         left: 240px;
         font-size: 24px;
@@ -61,13 +51,11 @@
     }
 
     .logo__paragraph {
-        position: relative;
         left: 340px;
         color: #ccc;
     }
 
     .logo__line {
-        position: absolute;
         left: 50px;
         display: flex;
         justify-content: center;
@@ -82,7 +70,7 @@
     }
 }
 
-@media screen and (max-width:1024px) {
+@media screen and (max-width: 1024px) {
     .logo__title {
         left: 220px;
     }
@@ -97,7 +85,6 @@
 }
 
 @media screen and (max-width: 764px) {
-
     .logo__title {
         left: 230px;
     }
@@ -109,9 +96,7 @@
     .logo__line {
         left: 30%;
         right: 0;
-        transform: translate(-50, -50);
     }
-
 }
 
 @media screen and (max-width: 425px) {
@@ -131,11 +116,9 @@
 
 @media screen and (max-width: 320px) {
     .logo {
-        position: relative;
         left: 0;
         right: 0;
         margin: 0 10px;
-
     }
 
     .logo__title {
