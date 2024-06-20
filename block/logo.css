@@ -1,4 +1,3 @@
-/* General Logo Section Styling */
 .logo {
     position: relative;
     padding: 20px;
@@ -15,14 +14,13 @@
 
 .logo__line {
     position: absolute;
-    left: 50px;
+    left: 150px;
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
-    margin: 20px 0;
+    margin-left: 550px;
     transform: translate(-50%, -50%);
-    /* Corrected usage of translate */
 }
 
 .logo__paragraph {
@@ -56,7 +54,7 @@
     }
 
     .logo__line {
-        left: 50px;
+        left: 150px;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -80,7 +78,7 @@
     }
 
     .logo__line {
-        left: 180px;
+        margin-left: 540px;
     }
 }
 
@@ -94,7 +92,7 @@
     }
 
     .logo__line {
-        left: 30%;
+        left: 13%;
         right: 0;
     }
 }
@@ -110,7 +108,7 @@
     }
 
     .logo__line {
-        left: 250px;
+        left: 5%;
     }
 }
 
@@ -130,6 +128,6 @@
     }
 
     .logo__line {
-        left: 180px;
+        left: 5%;
     }
 }
