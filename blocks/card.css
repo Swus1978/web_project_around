@@ -61,7 +61,7 @@
 
 .card-section__card-button--heart {
     position: absolute;
-    top: 50%;
+    top: 82%;
     right: 10px;
     transform: translateY(-50%);
     width: 21px;
@@ -70,12 +70,15 @@
     background-repeat: no-repeat;
     background-size: 20px;
     cursor: pointer;
+    border: none;
 }
 
 .card__trash-button {
     position: absolute;
-    top: 20px;
-    right: 40px;
+    top: 10px;
+    right: 10px;
+    width: 20px;
+    height: 20px;
     background: none;
     border: none;
     cursor: pointer;
@@ -160,6 +163,6 @@
     .card__trash-button {
         position: absolute;
         top: 10px;
-        right: 40px;
+        right: 10px;
     }
 }

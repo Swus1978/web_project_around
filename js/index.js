@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const cardGrid = document.querySelector('.card-section__grid');
 
     const togglePopup = () => {
-        popup.classList.toggle('open');
+        popup.classList.toggle('popup--open');
     };
 
     openPopupButton.addEventListener('click', togglePopup);
@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
             preview.style.display = 'none';
             togglePopup();
         } else {
-            alert('Please provide both a title and an image.');
+            alert('Por favor, proporciona un título y una imagen.');
         }
     });
 
@@ -54,8 +54,8 @@ document.addEventListener('DOMContentLoaded', () => {
         deleteButton.className = 'card__trash-button';
         deleteButton.type = 'image';
         deleteButton.src = 'images/Trash.png';
-        deleteButton.alt = 'Trash';
-        deleteButton.title = 'Delete';
+        deleteButton.alt = 'Eliminar';
+        deleteButton.title = 'Eliminar';
         deleteButton.addEventListener('click', () => {
             card.remove();
         });
@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const likeButton = document.createElement('button');
         likeButton.className = 'card-section__card-button card-section__card-button--heart';
-        likeButton.title = 'Like';
+        likeButton.title = 'Me gusta';
 
         card.appendChild(img);
         card.appendChild(deleteButton);
@@ -76,31 +76,3 @@ document.addEventListener('DOMContentLoaded', () => {
         cardGrid.appendChild(card);
     };
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
