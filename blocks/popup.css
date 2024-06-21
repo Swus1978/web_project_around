@@ -20,23 +20,18 @@
 .popup__close-button {
     position: relative;
     left: 450px;
-    bottom: 120px;
+    bottom: 80px;
     background: none;
     border: none;
     cursor: pointer;
-    background-image: url('/svg/Close\ Icon.svg');
-    background-repeat: no-repeat;
-    background-size: 26px 26px;
-    background-position: 10px center;
-    padding-right: 5px;
 }
 
 .popup__form {
     display: flex;
     position: relative;
-    bottom: 50px;
+    top: 60px;
     flex-direction: column;
-    margin-bottom: 100px;
+    margin-bottom: 50px;
     padding: 0 20px;
 }
 

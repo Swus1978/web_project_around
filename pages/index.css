@@ -1,17 +1,17 @@
 @import url("../vendor/normalize.css");
-@import url("/svg/Close\ Icon.svg");
-@import url("/svg/Group.svg");
-@import url("/svg/Line.svg");
-@import url("/svg/logo__title.svg");
-@import url("/svg/Trash.svg");
-@import url("/svg/Vector.svg");
 
+@import url("../blocks/general__style.css");
 
+@import url("../blocks/logo.css");
+@import url("../blocks/author.css");
+@import url("../blocks/card.css");
+@import url("../blocks/page.css");
+@import url("../blocks/popup.css");
+@import url("../blocks/footer.css");
 
-@import url("../block/author.css");
-@import url("../block/card.css");
-@import url("../block/footer.css");
-@import url("../block/general__style.css");
-@import url("../block/logo.css");
-@import url("../block/page.css");
-@import url("../block/popup.css");
+@import url("../images/logo__title.svg");
+@import url("../images/Close/Icon.svg");
+@import url("../images/Group.svg");
+@import url("../images/Line.svg");
+@import url("../images/Trash.svg");
+@import url("../images/Vector.svg");

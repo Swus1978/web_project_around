@@ -66,11 +66,9 @@
     width: 21px;
     height: 19px;
     display: inline-block;
-    background-image: url('/svg/Group.svg');
-    background-repeat: no-repeat;
-    background-size: 20px;
     border: none;
     cursor: pointer;
+    margin-right: 20px;
 }
 
 .card__trash-button {
@@ -80,15 +78,11 @@
     background: none;
     border: none;
     cursor: pointer;
-    background-image: url('svg/Trash.svg');
-    background-repeat: no-repeat;
-    background-size: 20px;
 }
 
 @media screen and (max-width: 764px) {
     .card-section {
         margin-top: 500px;
-        /* Adjust margin for smaller screens */
     }
 
     .card-section__grid {
