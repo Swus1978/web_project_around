@@ -13,7 +13,13 @@
 }
 
 .logo__line {
-    margin-left: 80px;
+    margin-left: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: calc(100% - 160px);
+    border-bottom: 1px solid #545454;
+    margin-right: 80px;
 }
 
 .logo__paragraph {
@@ -46,7 +52,7 @@
     }
 
     .logo__line {
-        margin-left: 80px;
+        margin-left: 200px;
         display: flex;
         justify-content: center;
         align-items: center;
