@@ -55,14 +55,18 @@
 
     .logo__line {
         margin-left: 80px;
+        /* Adjust margin as needed */
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 100%;
-        background-image: url('/svg/Line.svg');
-        background-repeat: no-repeat;
-        background-size: 20px 20px;
+        width: calc(100% - 160px);
+        /* Adjust width based on margin-left and margin-right */
+        border-bottom: 1px solid #545454;
+        /* Solid line with color #545454 */
+        margin-right: 80px;
+        /* Adjust margin-right to match margin-left for centering */
     }
+
 
     .logo__svg {
         width: 882px;

@@ -69,7 +69,13 @@
     border: none;
     cursor: pointer;
     margin-right: 20px;
+    background-image: url('/svg/Group.svg');
+    background-repeat: no-repeat;
+    background-size: 20px;
+    border: none;
+    cursor: pointer;
 }
+
 
 .card__trash-button {
     position: absolute;
@@ -78,6 +84,9 @@
     background: none;
     border: none;
     cursor: pointer;
+    background-image: url('/svg/Trash.svg');
+    background-repeat: no-repeat;
+    background-size: 20px;
 }
 
 @media screen and (max-width: 764px) {
