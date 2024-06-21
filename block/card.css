@@ -5,7 +5,7 @@
     width: 100%;
     max-width: 1000px;
     padding: 20px;
-    margin-top: 280px;
+    margin-top: 380px;
     margin-left: 180px;
 }
 
@@ -14,7 +14,7 @@
     grid-template-columns: repeat(auto-fill, minmax(282px, 1fr));
     grid-template-rows: 1fr minmax(min-content, 282px);
     justify-content: center;
-    grid-row-gap: 40px;
+    grid-row-gap: 10px;
 }
 
 .card-section__card {
@@ -26,6 +26,8 @@
     border-radius: 8px;
     text-align: center;
     margin: 0 auto;
+    position: relative;
+    padding-bottom: 10px;
 }
 
 .card__visually-hidden {
@@ -35,44 +37,60 @@
 .card-section__card-img {
     display: block;
     max-width: 100%;
-    height: 361px;
-    width: 282px;
+    height: 200px;
+    width: 100%;
     border-radius: 10px 10px 0 0;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
+    object-fit: cover;
 }
 
 .card-section__card-title {
-    padding-left: 10px;
+    justify-self: start;
+    align-self: start;
+    margin-right: 80px;
+    padding: 10px;
     color: #000;
     display: inline-block;
-    position: relative;
-    right: 50px;
 }
 
 .card-section__card-button {
-    padding: 10px 20px;
     color: #fff;
-    border: 1px solid #fff;
+    border: none;
+    background: none;
     cursor: pointer;
 }
 
-
 .card-section__card-button--heart {
+    position: absolute;
+    top: 230px;
+    right: 10px;
+    width: 21px;
+    height: 19px;
     display: inline-block;
+    background-image: url('/svg/Group.svg');
+    background-repeat: no-repeat;
+    background-size: 20px;
+    border: none;
+    cursor: pointer;
 }
 
 .card__trash-button {
-    position: relative;
-    bottom: 350px;
-    left: 200px;
-    width: 18px;
-    height: 19.3px;
-    margin-right: 30px;
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    background-image: url('svg/Trash.svg');
+    background-repeat: no-repeat;
+    background-size: 20px;
 }
 
 @media screen and (max-width: 764px) {
+    .card-section {
+        margin-top: 500px;
+        /* Adjust margin for smaller screens */
+    }
+
     .card-section__grid {
         gap: 30px;
     }
@@ -81,7 +99,7 @@
 @media screen and (max-width: 425px) {
     .card-section {
         width: 100%;
-        margin-top: 950px;
+        margin-top: 600px;
         margin-left: 0;
         margin-right: 0;
     }
@@ -111,9 +129,10 @@
 @media screen and (max-width: 320px) {
     .card-section {
         width: 100%;
-        margin-left: 160px;
-        margin-top: 550px;
-        margin-right: 0;
+        margin: 0;
+        margin-top: 450px;
+        margin-left: 150px;
+        padding-bottom: 200px;
     }
 
     .card-section__grid {
@@ -130,20 +149,20 @@
     }
 
     .card-section__card-title {
-        position: relative;
-        right: auto;
-        left: auto;
+        margin: 10px 0;
     }
 
-    .card-section__card-button {
-        position: relative;
-        right: auto;
-        left: auto;
+    .card-section__card-button--heart {
+        position: absolute;
+        top: 500px;
+        right: 10px;
+        margin: 0;
     }
 
     .card__trash-button {
-        position: relative;
+        position: absolute;
         top: 10px;
-        left: 0;
+        right: 40px;
+        margin: 0;
     }
 }

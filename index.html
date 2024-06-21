@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./pages/index.css">
-    <title>Document</title>
+    <title>Around The U.S.</title>
 </head>
 
 <body>
@@ -24,19 +24,15 @@
             <section class="author">
                 <img class="author__image" src="/images/image.jpg" alt="">
                 <button class="author__button-vector" type="button" title="pen">
-                    <svg class="author__pen" width="10" height="10" viewBox="0 0 10 10" fill="none"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path
-                            d="M10 1.32827L2.60377 8.7666L1.28302 7.41936L8.66038 0L10 1.32827ZM0 10L1.96226 9.41177L0.584906 8.08349L0 10Z"
-                            fill="white" />
+                    <svg class="author__pen">
+                        <use xlink:href="author__pen.svg#icon"></use>
                     </svg>
                 </button>
                 <h2 class="author__title">Jacques Cousteau</h2>
                 <p class="author__text">Explorador</p>
                 <button class="author__button" id="openPopupButton" type="button" title="add">
-                    <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M22 9.77778H12.2222V0H9.77778V9.77778H0V12.2222H9.77778V22H12.2222V12.2222H22V9.77778Z"
-                            fill="white" />
+                    <svg>
+                        <use xlink:href="popup__close.svg#icon"></use>
                     </svg>
                 </button>
             </section>
@@ -44,10 +40,8 @@
                 <h2 class="popup__visually-hidden">Popup Form</h2>
                 <div class="popup" id="popup">
                     <button class="popup__close-button" id="closePopupButton" type="button" title="close">
-                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M31.9977 28.8551L19.4269 16.2843L31.9977 3.71348L28.855 0.570788L16.2842 13.1416L3.71339 0.570788L0.570695 3.71348L13.1415 16.2843L0.570697 28.8551L3.71339 31.9978L16.2842 19.427L28.855 31.9978L31.9977 28.8551Z"
-                                fill="white" />
+                        <svg>
+                            <use xlink:href="popup__close.svg#icon"></use>
                         </svg>
                     </button>
                     <h3 class="popup__title">Editar perfil</h3>
@@ -72,11 +66,8 @@
                                 title="Delete">
                             <h3 class="card-section__card-title">Valle Yosemite</h3>
                             <button class="card-section__card-button card-section__card-button--heart" title="Like">
-                                <svg class="card-section__card-heart" width="21" height="19" viewBox="0 0 21 19"
-                                    fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M18.8368 2.20277L18.8394 2.20544C20.7188 4.13299 20.7225 7.31163 18.8368 9.26495L10.4812 17.9202L2.14988 9.29C1.25494 8.34225 0.75 7.08483 0.75 5.74496C0.75 4.39717 1.23873 3.14375 2.14714 2.20276L2.14972 2.20008C3.99577 0.268703 7.0174 0.264567 8.88883 2.22231L9.94166 3.3129L10.4867 3.87752L11.0261 3.30743L12.0736 2.20014C13.9438 0.265745 16.9677 0.266621 18.8368 2.20277Z"
-                                        stroke="black" stroke-width="1.5" />
+                                <svg>
+                                    <use xlink:href="card-section__card-heart.svg#icon"></use>
                                 </svg>
                             </button>
                         </div>
@@ -87,11 +78,8 @@
                                 title="Delete">
                             <h3 class="card-section__card-title">Lago Louise</h3>
                             <button class="card-section__card-button card-section__card-button--heart" title="Like">
-                                <svg class="card-section__card-heart" width="21" height="19" viewBox="0 0 21 19"
-                                    fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M18.8368 2.20277L18.8394 2.20544C20.7188 4.13299 20.7225 7.31163 18.8368 9.26495L10.4812 17.9202L2.14988 9.29C1.25494 8.34225 0.75 7.08483 0.75 5.74496C0.75 4.39717 1.23873 3.14375 2.14714 2.20276L2.14972 2.20008C3.99577 0.268703 7.0174 0.264567 8.88883 2.22231L9.94166 3.3129L10.4867 3.87752L11.0261 3.30743L12.0736 2.20014C13.9438 0.265745 16.9677 0.266621 18.8368 2.20277Z"
-                                        stroke="black" stroke-width="1.5" />
+                                <svg>
+                                    <use xlink:href="card-section__card-heart.svg#icon"></use>
                                 </svg>
                             </button>
                         </div>
@@ -102,11 +90,8 @@
                                 title="Delete">
                             <h3 class="card-section__card-title">Bold Mountains</h3>
                             <button class="card-section__card-button card-section__card-button--heart" title="Like">
-                                <svg class="card-section__card-heart" width="21" height="19" viewBox="0 0 21 19"
-                                    fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M18.8368 2.20277L18.8394 2.20544C20.7188 4.13299 20.7225 7.31163 18.8368 9.26495L10.4812 17.9202L2.14988 9.29C1.25494 8.34225 0.75 7.08483 0.75 5.74496C0.75 4.39717 1.23873 3.14375 2.14714 2.20276L2.14972 2.20008C3.99577 0.268703 7.0174 0.264567 8.88883 2.22231L9.94166 3.3129L10.4867 3.87752L11.0261 3.30743L12.0736 2.20014C13.9438 0.265745 16.9677 0.266621 18.8368 2.20277Z"
-                                        stroke="black" stroke-width="1.5" />
+                                <svg>
+                                    <use xlink:href="card-section__card-heart.svg#icon"></use>
                                 </svg>
                             </button>
                         </div>

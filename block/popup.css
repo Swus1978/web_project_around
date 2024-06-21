@@ -20,15 +20,24 @@
 .popup__close-button {
     position: relative;
     left: 450px;
-    bottom: 80px;
+    bottom: 120px;
     background: none;
     border: none;
     cursor: pointer;
+    background-image: url('/svg/Close\ Icon.svg');
+    background-repeat: no-repeat;
+    background-size: 26px 26px;
+    background-position: 10px center;
+    padding-right: 5px;
 }
 
 .popup__form {
     display: flex;
+    position: relative;
+    bottom: 50px;
     flex-direction: column;
+    margin-bottom: 100px;
+    padding: 0 20px;
 }
 
 .popup__form input[type="text"],
@@ -38,8 +47,8 @@
 
 .popup__button_type_save {
     position: absolute;
-    left: 55px;
-    top: 250px;
+    left: 40px;
+    top: 150px;
     padding: 10px;
     background: #000;
     color: white;
@@ -57,10 +66,15 @@
 }
 
 .popup__title {
+    position: absolute;
+    bottom: 290px;
     color: #000;
-    font-weight: 400;
-    height: 23px;
+    font-weight: 900;
+    font-size: 24px;
+    line-height: 29.05px;
     width: 330px;
+    height: 23px;
+    font-family: 'Inter';
 }
 
 .popup__info {
@@ -103,7 +117,7 @@
     .popup {
         width: 282px;
         height: 322px;
-        left: 50%;
+        left: 33.5%;
         right: 0;
     }
 
