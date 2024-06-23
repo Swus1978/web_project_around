@@ -56,10 +56,10 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        width: calc(100% - 160px);
+        width: calc(100% - 0%);
         border-bottom: 1px solid #545454;
         margin-right: 80px;
-        width: 880px;
+
     }
 
     .logo__svg {
