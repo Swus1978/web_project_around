@@ -54,14 +54,14 @@
     display: inline-block;
 }
 
-.card-section__card-button {
+.card__button {
     color: #fff;
     border: none;
     background: none;
     cursor: pointer;
 }
 
-.card-section__card-button--heart {
+.card__button--heart {
     position: absolute;
     top: 82%;
     right: 10px;
@@ -75,7 +75,7 @@
     border: none;
 }
 
-.card__trash-button {
+.card__button--trash {
     position: absolute;
     top: 10px;
     right: 10px;
