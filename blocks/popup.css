@@ -120,14 +120,14 @@
     .popup {
         width: 282px;
         height: 322px;
-        left: 33.5%;
+        left: 35.5%;
         right: 0;
     }
 
     .popup__button--save {
         width: 238px;
         height: 46px;
-        left: 40px;
+        left: 140px;
         right: 0;
         transform: translate(-50%, -50%);
     }
@@ -135,5 +135,7 @@
     .popup__close-button {
         left: 300px;
         right: 0;
+        height: 26px;
+        width: 26px;
     }
 }

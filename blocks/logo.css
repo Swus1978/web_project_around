@@ -35,32 +35,33 @@
     height: 1px;
 }
 
-@media screen and (max-width: 1280px) {
+@media screen and (max-width: 880px) {
     .logo {
         padding: 20px;
     }
 
     .logo__title {
         top: 50px;
-        left: 240px;
+        left: 180px;
         font-size: 24px;
         color: #fff;
         margin-left: 10px;
     }
 
     .logo__paragraph {
-        left: 340px;
+        left: 280px;
         color: #ccc;
     }
 
     .logo__line {
-        margin-left: 200px;
+        margin-left: 180px;
         display: flex;
         justify-content: center;
         align-items: center;
         width: calc(100% - 160px);
         border-bottom: 1px solid #545454;
         margin-right: 80px;
+        width: 880px;
     }
 
 
@@ -70,66 +71,37 @@
     }
 }
 
-@media screen and (max-width: 1024px) {
-    .logo__title {
-        left: 220px;
-    }
-
-    .logo__paragraph {
-        left: 320px;
-    }
-
-    .logo__line {
-        margin-left: 170px;
-    }
-}
-
-@media screen and (max-width: 764px) {
-    .logo__title {
-        left: 230px;
-    }
-
-    .logo__paragraph {
-        left: 330px;
-    }
-
-    .logo__line {
-        margin-left: 33%;
-        right: 0;
-    }
-}
-
-@media screen and (max-width: 425px) {
-    .logo__title {
-        right: 150px;
-        margin-right: 500px;
-    }
-
-    .logo__paragraph {
-        left: 0;
-    }
-
-    .logo__line {
-        left: 5%;
-    }
-}
-
 @media screen and (max-width: 320px) {
     .logo {
-        left: 0;
-        right: 0;
-        margin: 0 10px;
+        padding: 20px;
     }
 
     .logo__title {
-        left: 250px;
+        top: 50px;
+        left: 80px;
+        font-size: 24px;
+        color: #fff;
+        margin-left: 10px;
     }
 
     .logo__paragraph {
-        left: 360px;
+        left: 180px;
+        color: #ccc;
     }
 
     .logo__line {
-        left: 50%;
+        margin-left: 80px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: calc(100% - 100px);
+        border-bottom: 1px solid #545454;
+        margin-right: 80px;
+    }
+
+
+    .logo__svg {
+        width: 882px;
+        height: 1px;
     }
 }
