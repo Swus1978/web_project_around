@@ -13,15 +13,13 @@
 }
 
 .logo__line {
-    margin-left: 200px;
+    margin-left: 220px;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: calc(100% - 160px);
+    width: calc(100% - 300px);
     border-bottom: 1px solid #545454;
     margin-right: 0;
-    margin-left: 240px;
-    width: 880px;
 }
 
 .logo__paragraph {
@@ -63,7 +61,6 @@
         margin-right: 80px;
         width: 880px;
     }
-
 
     .logo__svg {
         width: 882px;
