@@ -23,7 +23,8 @@
                 </button>
                 <h2 class="author__title">Jacques Cousteau</h2>
                 <p class="author__text">Explorador</p>
-                <button class="author__button" id="openPopupButton" type="button" title="add"></button>
+                <button class="author__button author__button--add" id="openPopupButton" type="button"
+                    title="add"></button>
             </section>
             <section class="popup" id="popup">
                 <h2 class="visually-hidden">Popup Form</h2>
@@ -34,38 +35,38 @@
                 <form class="popup__form" name="register">
                     <input class="popup__info" type="text" name="name" placeholder="Titulo" required>
                     <label for="imageUrl">Pegar URL de imagen:</label>
-                    <input class="popup__load" type="text" id="imageUrl" placeholder="https://example.com/image.jpg"
-                        required>
+                    <input class="popup__load" type="text" id="imageUrl" placeholder="https://example.com/
+image.jpg" required>
                     <img class="popup__image" id="preview" src="#" alt="Preview Image">
                     <button class="popup__button popup__button--save" type="submit">Crear</button>
                 </form>
             </section>
-            <h2 class="card__visually-hidden">Card Section</h2>
+            <h2 class="visually-hidden">Card Section</h2>
             <section class="card-section">
                 <div class="card-section__grid">
                     <div class="card-section__card card-section__card--one">
                         <img src="images/kirill-pershin-1088404-unsplash.jpg" alt="Image 1"
                             class="card-section__card-img">
-                        <input class="card__button card__button--trash" type="image" src="/svg/Trash.svg" alt="Delete"
-                            title="Delete">
+                        <input class="card-section__button card-section__button--trash" type="image"
+                            src="/svg/Trash.svg" alt="Delete" title="Delete">
                         <h3 class="card-section__card-title">Valle Yosemite</h3>
-                        <button class="card__button card__button--heart" title="Like"></button>
+                        <button class="card-section__button card-section__button--heart" title="Like"></button>
                     </div>
                     <div class="card-section__card card-section__card--two">
                         <img src="images/kirill-pershin-1404681-unsplash.png" alt="Image 2"
                             class="card-section__card-img">
-                        <input class="card__button card__button--trash" type="image" src="/svg/Trash.svg" alt="Delete"
-                            title="Delete">
+                        <input class="card-section__button card-section__button--trash" type="image"
+                            src="/svg/Trash.svg" alt="Delete" title="Delete">
                         <h3 class="card-section__card-title">Lago Louise</h3>
-                        <button class="card__button card__button--heart" title="Like"></button>
+                        <button class="card-section__button card-section__button--heart" title="Like"></button>
                     </div>
                     <div class="card-section__card card-section__card--three">
                         <img src="images/kirill-pershin-1556355-unsplash.png" alt="Image 3"
                             class="card-section__card-img">
-                        <input class="card__button card__button--trash" type="image" src="/svg/Trash.svg" alt="Delete"
-                            title="Delete">
+                        <input class="card-section__button card-section__button--trash" type="image"
+                            src="/svg/Trash.svg" alt="Delete" title="Delete">
                         <h3 class="card-section__card-title">Bold Mountains</h3>
-                        <button class="card__button card__button--heart" title="Like"></button>
+                        <button class="card-section__button card-section__button--heart" title="Like"></button>
                     </div>
                 </div>
             </section>

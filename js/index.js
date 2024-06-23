@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
         img.alt = title;
 
         const deleteButton = document.createElement('input');
-        deleteButton.className = 'card__button card__button--trash';
+        deleteButton.className = 'card-section__button card-section__button--trash';
         deleteButton.type = 'image';
         deleteButton.src = '/svg/Trash.svg';
         deleteButton.alt = 'Eliminar';
@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
         cardTitle.textContent = title;
 
         const likeButton = document.createElement('button');
-        likeButton.className = 'card__button card__button--heart';
+        likeButton.className = 'card-section__button card-section__button--heart';
         likeButton.title = 'Me gusta';
 
         card.appendChild(img);
