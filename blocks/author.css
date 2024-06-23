@@ -82,6 +82,11 @@
     margin: 10px 0;
 }
 
+.author__pen {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+}
 
 @media screen and (max-width: 880px) {
     .author__title {
@@ -162,5 +167,6 @@
     .author__pen {
         width: 7.5px;
         height: 7.5px;
+        padding-bottom: 10px;
     }
 }

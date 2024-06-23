@@ -48,7 +48,7 @@
     margin-bottom: 10px;
 }
 
-.popup__button--save {
+.popup__button-submit {
     position: absolute;
     left: 40px;
     top: 150px;
@@ -102,7 +102,7 @@
         right: 0;
     }
 
-    .popup__button--save {
+    .popup__button-submit {
         width: 238px;
         height: 46px;
         left: 40px;
@@ -125,7 +125,7 @@
         margin-bottom: 100px;
     }
 
-    .popup__button--save {
+    .popup__button-submit {
         width: 238px;
         height: 46px;
         left: 140px;
