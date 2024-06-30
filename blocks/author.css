@@ -53,13 +53,13 @@
     line-height: 22px;
     background-color: black;
     border: 1px solid #fff;
+    cursor: pointer;
     text-align: center;
     background-image: url('/svg/pen.svg');
     background-repeat: no-repeat;
     background-size: 10px;
     background-position: 10px center;
     padding-right: 5px;
-    cursor: pointer;
 }
 
 .author__text {
@@ -116,7 +116,7 @@
 
     .author__image {
         left: 200px;
-        top: 60px;
+        top: 30px;
         width: 100px;
         height: 100px;
     }

@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Juan Quinones">
     <meta name="description" content="Around The U.S.">
-    <meta name="keywords" content="travel trippleten, tripleten, student tripleten">
+    <meta name="keywords" content="around the united states, around the states, student tripleten">
     <link rel="preconnect" href="https://rsms.me/">
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
     <link rel="stylesheet" href="./pages/index.css">
@@ -23,24 +23,30 @@
         <main>
             <section class="author">
                 <img class="author__image" src="/images/image.jpg" alt="jaques">
-                <button class="author__button author__button-vector" id="editProfileButton" type="button" title="Edit Profile"></button>
+                <button class="author__button-vector" type="button" title="pen">
+                    <img src="/svg/pen.svg" alt="pen">
+                </button>
                 <h2 class="author__title">Jacques Cousteau</h2>
                 <p class="author__text">Explorador</p>
-                <button class="author__button" id="openPopupButton" type="button" title="Add"></button> 
+                <button class="author__button" id="openPopupButton" type="button" title="add"></button>
             </section>
-            
+
             <section class="popup" id="popup">
                 <h2 class="visually-hidden">Popup Form</h2>
-                <button class="popup__close-button" id="closePopupButton" type="button" title="Close">
-                    <img src="/svg/Close%20Icon.svg" alt="Close">
+                <button class="popup__close-button" id="closePopupButton" type="button" title="close">
+                    <img src="/svg/Close%20Icon.svg" alt="close">
                 </button>
                 <h3 class="popup__title">Editar perfil</h3>
                 <form class="popup__form" name="register">
-                    <input class="popup__info" type="text" name="name" placeholder="Title" required>
-                    <input class="popup__info" type="text" name="text" placeholder="text" required>
-                    <button class="popup__button popup__button-submit" type="submit">Save</button>
+                    <input class="popup__info" type="text" name="name" placeholder="Titulo" required>
+                    <label for="imageUrl">Pegar URL de imagen:</label>
+                    <input class="popup__load" type="text" id="imageUrl" placeholder="https://example.com/image.jpg"
+                        required>
+                    <img class="popup__image" id="preview" src="#" alt="Preview Image">
+                    <button class="popup__button popup__button-submit" type="submit">Crear</button>
                 </form>
-            </section>            
+            </section>
+
             <section class="card-section">
                 <div class="card-section__grid">
                     <div class="card-section__card">

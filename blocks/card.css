@@ -74,15 +74,6 @@
     cursor: pointer;
     border: none;
 }
-.card-section__button-like:hover{
-    background-color: #545454;
-    height: 19px;
-    width: 21px;
-}
-.card-section__button-like:active {
-    background-color: #000;
-
-}
 
 .card-section__button-delete {
     position: absolute;
