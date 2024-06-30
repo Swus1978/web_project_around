@@ -1,0 +1,120 @@
+.card-section {
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 1000px;
+    padding: 20px;
+    margin-top: 200px;
+    margin-left: 180px;
+    height: 100px;
+}
+
+.card-section__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(282px, 1fr));
+    grid-template-rows: 1fr minmax(min-content, 282px);
+    justify-content: center;
+    grid-row-gap: 10px;
+}
+
+.card-section__card {
+    width: 100%;
+    max-width: 282px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    text-align: center;
+    margin: 0 auto;
+    position: relative;
+    padding-bottom: 10px;
+    padding-bottom: 2px;
+}
+
+.card__visually-hidden {
+    display: none;
+}
+
+.card-section__card-img {
+    display: block;
+    max-width: 100%;
+    height: 200px;
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+    object-fit: cover;
+}
+
+.card-section__card-title {
+    justify-self: start;
+    align-self: start;
+    margin-right: 80px;
+    padding: 10px;
+    color: #000;
+    display: inline-block;
+}
+
+.card-section__button {
+    color: #fff;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.card-section__button-like {
+    position: absolute;
+    top: 82%;
+    right: 10px;
+    transform: translateY(-50%);
+    width: 21px;
+    height: 19px;
+    background-image: url('/svg/Group.svg');
+    background-repeat: no-repeat;
+    background-size: 20px;
+    cursor: pointer;
+    border: none;
+}
+.card-section__button-like:hover{
+    background-color: #545454;
+    height: 19px;
+    width: 21px;
+}
+.card-section__button-like:active {
+    background-color: #000;
+
+}
+
+.card-section__button-delete {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 20px;
+    height: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    background-image: url('/svg/Trash.svg');
+    background-repeat: no-repeat;
+    background-size: 20px;
+}
+
+@media screen and (max-width: 880px) {
+    .card-section {
+        margin-top: 300px;
+    }
+
+    .card-section__grid {
+        gap: 10px;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .card-section {
+        margin-top: 300px;
+        margin-left: 0;
+    }
+
+    .card-section__grid {
+        gap: 10px;
+    }
+}

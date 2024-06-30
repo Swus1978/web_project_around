@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Juan Quinones">
+    <meta name="description" content="Around The U.S.">
+    <meta name="keywords" content="travel trippleten, tripleten, student tripleten">
+    <link rel="preconnect" href="https://rsms.me/">
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+    <link rel="stylesheet" href="./pages/index.css">
+    <title>Around The U.S.</title>
+</head>
+
+<body>
+    <div class="page">
+        <header class="logo">
+            <h1 class="logo__title">Around</h1>
+            <p class="logo__paragraph">The U.S.</p>
+            <div class="logo__line"></div>
+        </header>
+        <main>
+            <section class="author">
+                <img class="author__image" src="/images/image.jpg" alt="jaques">
+                <button class="author__button author__button-vector" id="editProfileButton" type="button" title="Edit Profile"></button>
+                <h2 class="author__title">Jacques Cousteau</h2>
+                <p class="author__text">Explorador</p>
+                <button class="author__button" id="openPopupButton" type="button" title="Add"></button> 
+            </section>
+            
+            <section class="popup" id="popup">
+                <h2 class="visually-hidden">Popup Form</h2>
+                <button class="popup__close-button" id="closePopupButton" type="button" title="Close">
+                    <img src="/svg/Close%20Icon.svg" alt="Close">
+                </button>
+                <h3 class="popup__title">Editar perfil</h3>
+                <form class="popup__form" name="register">
+                    <input class="popup__info" type="text" name="name" placeholder="Title" required>
+                    <input class="popup__info" type="text" name="text" placeholder="text" required>
+                    <button class="popup__button popup__button-submit" type="submit">Save</button>
+                </form>
+            </section>            
+            <section class="card-section">
+                <div class="card-section__grid">
+                    <div class="card-section__card">
+                        <img src="images/kirill-pershin-1088404-unsplash.jpg" alt="Image 1"
+                            class="card-section__card-img">
+                        <input class="card-section__button card-section__button-delete" type="image"
+                            src="/svg/Trash.svg" alt="Delete" title="Delete">
+                        <h3 class="card-section__card-title">Valle Yosemite</h3>
+                        <button class="card-section__button card-section__button-like" title="Like"></button>
+                    </div>
+                    <div class="card-section__card">
+                        <img src="images/kirill-pershin-1404681-unsplash.png" alt="Image 2"
+                            class="card-section__card-img">
+                        <input class="card-section__button card-section__button-delete" type="image"
+                            src="/svg/Trash.svg" alt="Delete" title="Delete">
+                        <h3 class="card-section__card-title">Lago Louise</h3>
+                        <button class="card-section__button card-section__button-like" title="Like"></button>
+                    </div>
+                    <div class="card-section__card">
+                        <img src="images/kirill-pershin-1556355-unsplash.png" alt="Image 3"
+                            class="card-section__card-img">
+                        <input class="card-section__button card-section__button-delete" type="image"
+                            src="/svg/Trash.svg" alt="Delete" title="Delete">
+                        <h3 class="card-section__card-title">Bold Mountains</h3>
+                        <button class="card-section__button card-section__button-like" title="Like"></button>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+        <footer class="footer">
+            <h3 class="footer__title">&copy;2024 Around The U.S.</h3>
+        </footer>
+    </div>
+    <script src="js/index.js"></script>
+</body>
+
+</html>

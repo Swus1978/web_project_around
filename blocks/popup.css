@@ -1,0 +1,122 @@
+/* CSS from your previous message */
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 430px;
+    height: 330px;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+.popup--open {
+    display: block;
+}
+
+.popup__close-button {
+    position: relative;
+    left: 450px;
+    bottom: 80px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    background-image: url('/svg/Vector.svg');
+    background-repeat: no-repeat;
+    background-size: 20px;
+    background-position: 60px center;
+    padding-left: 10px;
+    cursor: pointer;
+}
+
+.popup__form {
+    display: flex;
+    position: relative;
+    top: 60px;
+    flex-direction: column;
+    margin-bottom: 50px;
+    padding: 0 20px;
+}
+
+.popup__form input[type="text"] {
+    margin-bottom: 10px;
+}
+
+.popup__form input[type="file"] {
+    margin-bottom: 10px;
+}
+
+.popup__button-submit {
+    position: absolute;
+    left: 40px;
+    top: 150px;
+    padding: 10px;
+    background: #000;
+    color: white;
+    border: none;
+    cursor: pointer;
+    width: 358px;
+    height: 50.15px;
+}
+
+.popup__image {
+    max-width: 100%;
+    margin-top: 10px;
+    width: 816px;
+    height: 540px;
+}
+
+.popup__title {
+    position: absolute;
+    bottom: 290px;
+    color: #000;
+    font-weight: 900;
+    font-size: 24px;
+    line-height: 29.05px;
+    width: 330px;
+    height: 23px;
+    font-family: 'Inter';
+}
+
+.popup__info {
+    border-style: none;
+    border-bottom-style: solid;
+}
+
+.popup__load {
+    border-style: none;
+    border-bottom-style: solid;
+}
+
+.visually-hidden {
+    display: none;
+}
+
+@media screen and (max-width: 320px) {
+    .popup {
+        width: 282px;
+        height: 322px;
+        left: 35.5%;
+        right: 0;
+        margin-bottom: 100px;
+    }
+
+    .popup__button-submit {
+        width: 238px;
+        height: 46px;
+        left: 140px;
+        right: 0;
+        transform: translate(-50%, -50%);
+    }
+
+    .popup__close-button {
+        left: 300px;
+        right: 0;
+        height: 26px;
+        width: 26px;
+    }
+}
