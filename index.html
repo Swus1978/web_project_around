@@ -23,13 +23,23 @@
         <main>
             <section class="author">
                 <img class="author__image" src="/images/image.jpg" alt="jaques">
-                <button class="author__button-vector" id="editProfileButton" type="button" title="pen">
-                </button>
+                <button class="author__button author__button-vector" id="editProfileButton" type="button" title="editProfileButton"></button>
                 <h2 class="author__title">Jacques Cousteau</h2>
                 <p class="author__text">Explorador</p>
                 <button class="author__button" id="openPopupButton" type="button" title="add"></button>
             </section>
-
+            <section class="popup" id="popup">
+                <h2 class="visually-hidden">Popup Form</h2>
+                <button class="popup__close-button" id="closePopupButton" type="button" title="close">
+                    <img src="/svg/Close%20Icon.svg" alt="close">
+                </button>
+                <h3 class="popup__title">Editar perfil</h3>
+                <form class="popup__form" name="register">
+                    <input class="popup__info" type="text" name="name" placeholder="Titulo" required>
+                    <input class="popup__info" type="text" name="text" placeholder="Texto" required>
+                    <button class="popup__button popup__button-submit" type="submit">Crear</button>
+                </form>
+            </section>
             <section class="popup" id="popup">
                 <h2 class="visually-hidden">Popup Form</h2>
                 <button class="popup__close-button" id="closePopupButton" type="button" title="close">
@@ -90,7 +100,8 @@
             <h3 class="footer__title">&copy;2024 Around The U.S.</h3>
         </footer>
     </div>
-    <script src="js/index.js"></script>
+    <script src="/js/index.js" defer></script>
+    <script src="/js/edit_profile.js" defer></script>
 </body>
 
 </html>
