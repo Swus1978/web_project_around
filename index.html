@@ -28,33 +28,35 @@
                 <p class="author__text">Explorador</p>
                 <button class="author__button" id="openPopupButton" type="button" title="add"></button>
             </section>
-            <section class="popup" id="popup">
+            
+            <section class="popup" id="editPopup">
                 <h2 class="visually-hidden">Popup Form</h2>
-                <button class="popup__close-button" id="closePopupButton" type="button" title="close">
+                <button class="popup__close-button" id="closeEditPopupButton" type="button" title="close">
                     <img src="/svg/Close%20Icon.svg" alt="close">
                 </button>
                 <h3 class="popup__title">Editar perfil</h3>
-                <form class="popup__form" name="register">
+                <form class="popup__form" name="editProfile">
                     <input class="popup__info" type="text" name="name" placeholder="Titulo" required>
                     <input class="popup__info" type="text" name="text" placeholder="Texto" required>
-                    <button class="popup__button popup__button-submit" type="submit">Crear</button>
+                    <button class="popup__button popup__button-submit" type="submit">Guardar</button>
                 </form>
             </section>
-            <section class="popup" id="popup">
+            
+            <section class="popup" id="imagePopup">
                 <h2 class="visually-hidden">Popup Form</h2>
-                <button class="popup__close-button" id="closePopupButton" type="button" title="close">
+                <button class="popup__close-button" id="closeImagePopupButton" type="button" title="close">
                     <img src="/svg/Close%20Icon.svg" alt="close">
                 </button>
-                <h3 class="popup__title">Editar perfil</h3>
-                <form class="popup__form" name="register">
+                <h3 class="popup__title">Agregar Imagen</h3>
+                <form class="popup__form" name="addImage">
                     <input class="popup__info" type="text" name="name" placeholder="Titulo" required>
-                    <label for="imageUrl">Pegar URL de imagen:</label>
-                    <input class="popup__load" type="text" id="imageUrl" placeholder="https://example.com/image.jpg"
-                        required>
-                    <img class="popup__image" id="preview" src="#" alt="Preview Image">
+                    <label for="imageUrlInput">Pegar URL de imagen:</label>
+                    <input class="popup__load" type="text" id="imageUrlInput" placeholder="https://example.com/image.jpg" required>
+                    <img class="popup__image" id="previewImage" src="#" alt="Preview Image">
                     <button class="popup__button popup__button-submit" type="submit">Crear</button>
                 </form>
             </section>
+            
             <section class="card-section">
                 <div class="card-section__grid">
                     <div class="card-section__card">
@@ -101,7 +103,6 @@
         </footer>
     </div>
     <script src="/js/index.js" defer></script>
-    <script src="/js/edit_profile.js" defer></script>
 </body>
 
 </html>

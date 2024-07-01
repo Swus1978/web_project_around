@@ -1,18 +1,53 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const openPopupButton = document.querySelector('#openPopupButton');
-    const closePopupButton = document.querySelector('#closePopupButton');
-    const popup = document.querySelector('#popup');
+    // Variables for Edit Profile Popup
+    const editProfileButton = document.querySelector('#editProfileButton');
+    const closeEditPopupButton = document.querySelector('#closeEditPopupButton');
+    const editPopup = document.querySelector('#editPopup');
+    const editForm = document.querySelector('.popup__form[name="editProfile"]');
+    const authorTitle = document.querySelector('.author__title');
+    const authorText = document.querySelector('.author__text');
+
+    // Variables for Image Popup
+    const openImagePopupButton = document.querySelector('#openPopupButton');
+    const closeImagePopupButton = document.querySelector('#closeImagePopupButton');
+    const imagePopup = document.querySelector('#imagePopup');
+    const imageForm = document.querySelector('.popup__form[name="addImage"]');
     const previewImage = document.querySelector('#previewImage');
     const imageUrlInput = document.querySelector('#imageUrlInput');
-    const form = document.querySelector('.popup__form');
     const cardGrid = document.querySelector('.card-section__grid');
 
-    const togglePopup = () => {
+    // Toggle Functions
+    const togglePopup = (popup) => {
         popup.classList.toggle('popup--open');
     };
 
-    openPopupButton.addEventListener('click', togglePopup);
-    closePopupButton.addEventListener('click', togglePopup);
+    // Edit Profile Popup Events
+    editProfileButton.addEventListener('click', () => {
+        editForm.querySelector('input[name="name"]').value = authorTitle.textContent;
+        editForm.querySelector('input[name="text"]').value = authorText.textContent;
+        togglePopup(editPopup);
+    });
+
+    closeEditPopupButton.addEventListener('click', () => togglePopup(editPopup));
+
+    editForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+        const title = editForm.querySelector('input[name="name"]').value;
+        const text = editForm.querySelector('input[name="text"]').value;
+
+        if (title && text) {
+            authorTitle.textContent = title;
+            authorText.textContent = text;
+            editForm.reset();
+            togglePopup(editPopup);
+        } else {
+            alert('Please provide both a title and text.');
+        }
+    });
+
+    // Image Popup Events
+    openImagePopupButton.addEventListener('click', () => togglePopup(imagePopup));
+    closeImagePopupButton.addEventListener('click', () => togglePopup(imagePopup));
 
     imageUrlInput.addEventListener('input', () => {
         const url = imageUrlInput.value;
@@ -25,17 +60,17 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    form.addEventListener('submit', (event) => {
+    imageForm.addEventListener('submit', (event) => {
         event.preventDefault();
-        const title = form.querySelector('input[name="name"]').value;
+        const title = imageForm.querySelector('input[name="name"]').value;
         const imageUrl = previewImage.src;
 
         if (title && imageUrl && imageUrl !== '#') {
             createCard(title, imageUrl);
-            form.reset();
+            imageForm.reset();
             previewImage.src = '#';
             previewImage.style.display = 'none';
-            togglePopup();
+            togglePopup(imagePopup);
         } else {
             alert('Please provide a title and an image.');
         }
