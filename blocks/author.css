@@ -35,7 +35,7 @@
     cursor: pointer;
     text-align: center;
     top: 96px;
-    left: 1020px;
+    left: 980px;
     background-image: url('/svg/Vector.svg');
     background-repeat: no-repeat;
     background-size: 20px;
@@ -74,8 +74,8 @@
 
 .author__image {
     position: absolute;
-    left: 230px;
-    top: 30px;
+    left: 240px;
+    top: 40px;
     border-radius: 50%;
     width: 120px;
     height: 120px;
@@ -91,31 +91,30 @@
 @media screen and (max-width: 880px) {
     .author__title {
         font-size: 36px;
-        top: 100px;
-        left: 130px;
+        top: 50px;
+        left: 230px;
     }
 
     .author__button {
         font-size: 10px;
-        left: 930px;
-        top: 120px;
+        left: 980px;
+        top: 78px;
     }
 
     .author__button-vector {
         font-size: 16px;
-        left: 740px;
-        top: 125px;
+        left: 840px;
+        top: 78px;
     }
 
     .author__text {
         font-size: 12px;
-        top: 160px;
-        left: 1px;
+        left: 100px;
         width: 300px;
     }
 
     .author__image {
-        left: 200px;
+        left: 250px;
         top: 30px;
         width: 100px;
         height: 100px;
@@ -132,7 +131,7 @@
 
     .author__button {
         font-size: 8px;
-        left: 40px;
+        left: 55px;
         top: 250px;
         width: 282px;
         height: 50px;

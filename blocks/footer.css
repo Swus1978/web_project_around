@@ -21,7 +21,7 @@ footer {
 
 @media screen and (max-width: 880px) {
     footer {
-        margin-left: 180px;
+        margin-left: 280px;
 
     }
 
@@ -38,7 +38,7 @@ footer {
     }
 
     .footer__title {
-        left: 100px;
+        left: 120px;
         display: inline-flex;
         transform: translate(-10%, -50%);
     }
