@@ -34,19 +34,20 @@
     border: 1px solid #fff;
     cursor: pointer;
     text-align: center;
-    top: 96px;
-    left: 980px;
+    bottom: 35px;
+    left: 680px;
     background-image: url('/svg/Vector.svg');
     background-repeat: no-repeat;
     background-size: 20px;
     background-position: 60px center;
     padding-left: 10px;
+    box-sizing: border-box;
 }
 
 .author__button-vector {
     position: absolute;
-    left: 850px;
-    top: 96px;
+    left: 550px;
+    bottom: 55px;
     width: 24px;
     height: 24px;
     font-size: 18px;
@@ -60,6 +61,7 @@
     background-position: 10px center;
     padding-right: 5px;
     cursor: pointer;
+    box-sizing: border-box;
 }
 
 .author__text {
@@ -83,6 +85,7 @@
 }
 
 .author__pen {
+    position: absolute;
     display: inline-block;
     width: 10px;
     height: 10px;
@@ -98,14 +101,14 @@
 
     .author__button {
         font-size: 10px;
-        left: 980px;
-        top: 78px;
+        left: 580px;
+        bottom: 50px;
     }
 
     .author__button-vector {
         font-size: 16px;
-        left: 840px;
-        top: 78px;
+        left: 440px;
+        bottom: 68px;
     }
 
     .author__text {
@@ -125,15 +128,15 @@
 @media screen and (max-width: 320px) {
     .author__title {
         font-size: 12px;
-        top: 120px;
+        top: 140px;
         left: 30px;
         width: 320px;
     }
 
     .author__button {
         font-size: 8px;
-        left: 55px;
-        top: 250px;
+        left: 15px;
+        top: 100px;
         width: 282px;
         height: 50px;
         background-position: 130px center;
@@ -145,12 +148,15 @@
         width: 18px;
         height: 18px;
         left: 250px;
-        top: 150px;
+        top: 0;
+        margin-bottom: 50px;
+        transform: translate(-50%, -50%);
+        
     }
 
     .author__text {
         font-size: 10px;
-        top: 180px;
+        top: 220px;
         left: 0;
         right: 0;
         width: 250px;

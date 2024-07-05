@@ -15,19 +15,21 @@
 
 <body>
     <div class="page">
-        <header class="logo">
+        <nav class="logo">
             <h1 class="logo__title">Around</h1>
             <p class="logo__paragraph">The U.S.</p>
             <div class="logo__line"></div>
-        </header>
+        </nav>
         <main>
-            <section class="author">
+            <header class="author">
                 <img class="author__image" src="/images/image.jpg" alt="jaques">
-                <button class="author__button author__button-vector" id="editProfileButton" type="button" title="editProfileButton"></button>
-                <h2 class="author__title">Jacques Cousteau</h2>
-                <p class="author__text">Explorador</p>
-                <button class="author__button" id="openPopupButton" type="button" title="add"></button>
-            </section>
+                <div class="author__profile">
+                    <h2 class="author__title">Jacques Cousteau</h2>
+                    <h3 class="author__text">Explorador</p>
+                    <button class="author__button author__button-vector" id="editProfileButton" type="button" title="editProfileButton"></button>
+                    <button class="author__button" id="openPopupButton" type="button" title="add"></button>
+                </div>
+            </header>
             
             <section class="popup" id="editPopup">
                 <h2 class="visually-hidden">Popup Form</h2>
