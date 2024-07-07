@@ -17,6 +17,8 @@ footer {
     margin-left: auto;
     margin-right: auto;
     color: #fff;
+    filter: blur(1px); 
+    opacity: 0.5; 
 }
 
 @media screen and (max-width: 880px) {

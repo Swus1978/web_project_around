@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Variables for Edit Profile Popup
+  
     const editProfileButton = document.querySelector('#editProfileButton');
     const closeEditPopupButton = document.querySelector('#closeEditPopupButton');
     const editPopup = document.querySelector('#editPopup');
@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const authorTitle = document.querySelector('.author__title');
     const authorText = document.querySelector('.author__text');
 
-    // Variables for Image Popup
+
     const openImagePopupButton = document.querySelector('#openPopupButton');
     const closeImagePopupButton = document.querySelector('#closeImagePopupButton');
     const imagePopup = document.querySelector('#imagePopup');
@@ -16,12 +16,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const imageUrlInput = document.querySelector('#imageUrlInput');
     const cardGrid = document.querySelector('.card-section__grid');
 
-    // Toggle Functions
+
     const togglePopup = (popup) => {
         popup.classList.toggle('popup--open');
     };
 
-    // Edit Profile Popup Events
+
     editProfileButton.addEventListener('click', () => {
         editForm.querySelector('input[name="name"]').value = authorTitle.textContent;
         editForm.querySelector('input[name="text"]').value = authorText.textContent;
@@ -45,7 +45,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Image Popup Events
     openImagePopupButton.addEventListener('click', () => togglePopup(imagePopup));
     closeImagePopupButton.addEventListener('click', () => togglePopup(imagePopup));
 
