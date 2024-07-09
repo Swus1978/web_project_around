@@ -126,7 +126,8 @@
         height: 322px;
         left: 35.5%;
         right: 0;
-        margin-bottom: 100px;
+        bottom: 100%;
+    
     }
 
     .popup__button-submit {

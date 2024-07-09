@@ -59,7 +59,7 @@
     transform: translateY(-50%);
     width: 21px;
     height: 19px;
-    background-image: url('/svg/heart.svg');
+    background-image: url('/images/heart.png');
     background-repeat: no-repeat;
     background-size: 20px;
     cursor: pointer;
@@ -70,7 +70,7 @@
 }
 .card-section__button-like:active {
     background-image: url(/svg/heart__active.svg);
-    fill: #000;
+    stroke: #000;
 }
 
 .card-section__button-delete {
