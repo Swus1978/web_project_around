@@ -17,7 +17,6 @@
     margin: 10px 0;
     top: 70px;
     left: 210px;
-    right: 0;
     font-weight: 500;
     line-height: 48px;
 }
@@ -84,14 +83,6 @@
     margin: 10px 0;
 }
 
-.author__pen {
-    position: absolute;
-    display: inline-block;
-    width: 10px;
-    height: 10px;
-    cursor: pointer;
-}
-
 @media screen and (max-width: 880px) {
     .author__title {
         font-size: 36px;
@@ -151,7 +142,6 @@
         top: 0;
         margin-bottom: 50px;
         transform: translate(-50%, -50%);
-        
     }
 
     .author__text {
@@ -168,11 +158,5 @@
         top: 20px;
         width: 80px;
         height: 80px;
-    }
-
-    .author__pen {
-        width: 7.5px;
-        height: 7.5px;
-        padding-bottom: 10px;
     }
 }
