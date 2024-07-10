@@ -86,7 +86,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const deleteButton = document.createElement('input');
         deleteButton.className = 'card-section__button card-section__button-delete';
-        deleteButton.type = 'image';
+        deleteButton.type = 'svg';
         deleteButton.src = './svg/Trash.svg';
         deleteButton.alt = 'Delete';
         deleteButton.title = 'Delete';
