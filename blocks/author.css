@@ -35,7 +35,7 @@
     text-align: center;
     top: 95px;
     left: 980px;
-    background-image: url('/svg/Vector.svg');
+    background-image: url('../svg/Vector.svg');
     background-repeat: no-repeat;
     background-size: 20px;
     background-position: 60px center;
@@ -54,7 +54,7 @@
     background-color: black;
     border: 1px solid #fff;
     text-align: center;
-    background-image: url('/svg/pen.svg');
+    background-image: url('../svg/pen.svg');
     background-repeat: no-repeat;
     background-size: 10px;
     background-position: 10px center;
@@ -158,7 +158,7 @@
         width: 18px;
         height: 18px;
         font-size: 18px;
-        background-image: url('/svg/pen.svg');
+        background-image: url('../svg/pen.svg');
         background-repeat: no-repeat;
         background-size: 7.5px;
         background-position: 10px center;

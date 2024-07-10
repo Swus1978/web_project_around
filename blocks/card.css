@@ -59,17 +59,17 @@
     transform: translateY(-50%);
     width: 21px;
     height: 19px;
-    background-image: url('/images/heart.png');
+    background-image: url('../images/heart.png');
     background-repeat: no-repeat;
     background-size: 20px;
     cursor: pointer;
     border: none;
 }
 .card-section__button-like:hover {
-    background-image: url(/svg/heart__hover.svg);
+    background-image: url(../svg/heart__hover.svg);
 }
 .card-section__button-like:active {
-    background-image: url(/svg/heart__active.svg);
+    background-image: url(../svg/heart__active.svg);
     stroke: #000;
 }
 
@@ -82,7 +82,7 @@
     background: none;
     border: none;
     cursor: pointer;
-    background-image: url('/svg/Trash.svg');
+    background-image: url('../svg/Trash.svg');
     background-repeat: no-repeat;
     background-size: 20px;
 }
