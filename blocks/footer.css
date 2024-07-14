@@ -42,6 +42,6 @@ footer {
         left: 120px;
         display: inline-flex;
         font-size: 10px;
-        transform: translate(-0%, -60%);
+        transform: translate(-40%, -50%);
     }
 }
