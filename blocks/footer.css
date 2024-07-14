@@ -21,13 +21,14 @@ footer {
 
 @media screen and (max-width: 880px) {
     footer {
-        margin-left: 280px;
+        margin-left: 20px;
 
     }
 
     .footer__title {
         margin-left: auto;
         margin-right: auto;
+        transform: translate(-30%, -50%);
     }
 }
 
@@ -40,6 +41,7 @@ footer {
     .footer__title {
         left: 120px;
         display: inline-flex;
-        transform: translate(-10%, -50%);
+        font-size: 10px;
+        transform: translate(-0%, -60%);
     }
 }

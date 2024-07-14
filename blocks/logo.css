@@ -1,6 +1,7 @@
 .logo {
     position: relative;
     padding: 20px;
+    text-align: start;
 }
 
 .logo__title {
@@ -52,7 +53,7 @@
     }
 
     .logo__line {
-        margin-left: 220px;
+        margin-left: 1px;
         display: flex;
         justify-content: center;
         align-items: center;

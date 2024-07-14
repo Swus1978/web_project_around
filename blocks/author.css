@@ -85,31 +85,47 @@
 
 @media screen and (max-width: 880px) {
     .author__title {
-        font-size: 36px;
-        top: 50px;
-        left: 230px;
+        font-size: 20px;
+        top: 140px;
+        left: 250px;
+        width: 320px;
     }
 
     .author__button {
-        font-size: 10px;
-        left: 980px;
-        top: 80px;
+        font-size: 8px;
+        left: 250px;
+        top: 280px;
+        width: 282px;
+        height: 50px;
+        background-position: 130px center;
     }
 
     .author__button-vector {
-        font-size: 16px;
-        left: 840px;
-        top: 80px;
+        left: 510px;
+        top: 170px;
+        bottom: 10px;
+        width: 18px;
+        height: 18px;
+        font-size: 18px;
+        background-image: url('../svg/pen.svg');
+        background-repeat: no-repeat;
+        background-size: 7.5px;
+        background-position: 10px center;
+        padding-right: 10px;
+        cursor: pointer;
+        box-sizing: border-box;
     }
 
     .author__text {
         font-size: 12px;
-        left: 100px;
+        left: 10px;
         width: 300px;
+        margin-top: 80px;
+        margin-left: 240px;
     }
 
     .author__image {
-        left: 250px;
+        left: 350px;
         top: 30px;
         width: 100px;
         height: 100px;
@@ -137,8 +153,8 @@
 
     .author__text {
         font-size: 10px;
-        top: 200px;
-        left: 0;
+        top: 130px;
+        left: 80px;
         right: 0;
         width: 250px;
         transform: translate(-102%, -150%);

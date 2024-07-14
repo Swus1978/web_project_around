@@ -95,7 +95,11 @@
 
 @media (max-width: 880px) {
     .card-section__grid {
-        grid-template-columns: repeat(3, 282px);
+        grid-template-columns: 282px;
+        
+    }
+    .card-section__card {
+        top: 100px;
     }
 }
 

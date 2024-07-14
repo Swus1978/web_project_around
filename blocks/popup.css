@@ -98,24 +98,24 @@
     display: none;
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 880px) {
     .popup {
         width: 282px;
         height: 322px;
-        left: 65%;
+        left: 32.5%;
         right: 0;
     }
 
     .popup__button-submit {
         width: 238px;
         height: 46px;
-        left: 40px;
+        margin-left: 100px;
         right: 0;
         transform: translate(-50%, -50%);
     }
 
     .popup__close-button {
-        left: 300px;
+        left: 250px;
         right: 0;
     }
 }
@@ -133,7 +133,7 @@
     .popup__button-submit {
         width: 238px;
         height: 46px;
-        left: 140px;
+        margin-left: 100px;
         right: 0;
         transform: translate(-50%, -50%);
     }
