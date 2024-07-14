@@ -39,7 +39,7 @@ footer {
     }
 
     .footer__title {
-        left: 120px;
+        margin-left: 120px;
         display: inline-flex;
         font-size: 10px;
         transform: translate(-40%, -50%);
