@@ -93,6 +93,39 @@
     border-style: none;
     border-bottom-style: solid;
 }
+.popup--image-viewer .popup__content {
+    padding: 0;
+    background-color: transparent;
+    box-shadow: none;
+}
+
+.popup--image-viewer .popup__image {
+    max-width: 75vw;
+    max-height: 75vh;
+    border-radius: 8px;
+}
+
+.popup--image-viewer .popup__close-button {
+    top: 5px;
+    right: 5px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    line-height: 1;
+    text-align: center;
+    width: 30px;
+    height: 30px;
+}
+
+.popup--image-viewer .popup__close-button::after {
+    content: '\00d7'; /* Unicode for the multiplication (close) symbol */
+    color: white;
+    font-size: 24px;
+    line-height: 30px;
+}
+
 
 .visually-hidden {
     display: none;
