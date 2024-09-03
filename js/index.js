@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
+
     const editProfileButton = document.querySelector('#editProfileButton');
     const closeEditPopupButton = document.querySelector('#closeEditPopupButton');
     const editPopup = document.querySelector('#editPopup');
@@ -9,13 +10,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const openImagePopupButton = document.querySelector('#openPopupButton');
     const closeImagePopupButton = document.querySelector('#closeImagePopupButton');
     const imagePopup = document.querySelector('#imagePopup');
-    const imageViewerPopup = document.querySelector('.imageViewerPopup');
+    const popupImageViewer = document.querySelector('imageViewerPoppu');
     const imageForm = document.querySelector('.popup__form[name="addImage"]');
     const previewImage = document.querySelector('#previewImage');
     const imageUrlInput = document.querySelector('#imageUrlInput');
     const cardGrid = document.querySelector('.card-section__grid');
+    const buttonLikeHeart = document.querySelector(".card-section__button-like")
 
-    // Initial Cards Data
     const initialCards = [
         { name: "Valle de Yosemite", link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/yosemite.jpg" },
         { name: "Lago Louise", link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/lake-louise.jpg" },
@@ -25,12 +26,10 @@ document.addEventListener('DOMContentLoaded', () => {
         { name: "Lago di Braies", link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/lago.jpg" }
     ];
 
-    // Toggle popup visibility
     const togglePopup = (popup) => {
-        popup.classList.toggle('popup--visible');
+        popup.classList.toggle('popup--open');
     };
 
-    // Create and add a new card
     const createCard = (title, imageUrl) => {
         const card = document.createElement('div');
         card.className = 'card-section__card';
@@ -39,11 +38,6 @@ document.addEventListener('DOMContentLoaded', () => {
         img.className = 'card-section__card-img';
         img.src = imageUrl;
         img.alt = title;
-        img.addEventListener('click', () => {
-            const popupImage = imageViewerPopup.querySelector('.popup__image');
-            popupImage.src = img.src;
-            togglePopup(imageViewerPopup);
-        });
 
         const deleteButton = document.createElement('button');
         deleteButton.className = 'card-section__button card-section__button-delete';
@@ -71,10 +65,10 @@ document.addEventListener('DOMContentLoaded', () => {
         cardGrid.appendChild(card);
     };
 
+
     // Load initial cards
     initialCards.forEach(card => createCard(card.name, card.link));
 
-    // Edit profile popup
     editProfileButton.addEventListener('click', () => {
         editForm.querySelector('input[name="name"]').value = authorTitle.textContent;
         editForm.querySelector('input[name="text"]').value = authorText.textContent;
@@ -98,7 +92,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Image popup functionality
     openImagePopupButton.addEventListener('click', () => togglePopup(imagePopup));
     closeImagePopupButton.addEventListener('click', () => togglePopup(imagePopup));
 
@@ -129,10 +122,42 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Image viewer popup functionality
-    const popupOverlay = imageViewerPopup.querySelector('.popup__overlay');
-    popupOverlay.addEventListener('click', () => {
-        togglePopup(imageViewerPopup);
+    buttonLikeHeart.querySelector("buttonLikeHeart").addEventListener("click", function (e) {
+        e.target.classList.toggle(".card-section__button-like");
+    })
+
+    const section = document.querySelector('.popup--image-viewer');
+  
+    // Select all card images within the section
+    const cards = section.querySelectorAll('.card__image');
+    
+    // Select the popup container and elements
+    const popup = section.querySelector('.imageViewerPopup');
+    const popupImage = popup.querySelector('.popup__image');
+    const popupOverlay = popup.querySelector('.popup__overlay');
+  
+    // Add click event listener to each card image
+    cards.forEach(card => {
+      card.addEventListener('click', function() {
+        // Get the source of the clicked image
+        const imageUrl = this.src;
+        
+        // Set the source of the popup image
+        popupImage.src = imageUrl;
+        
+        // Show the popup
+        popup.classList.add('popup--visible');
+      });
     });
+  
+    // Add click event listener to the overlay to close the popup
+    popupOverlay.addEventListener('click', function() {
+      // Hide the popup
+      popup.classList.remove('popup--visible');
+      
+      // Clear the image source to prevent flickering
+      popupImage.src = '';
+    });
+  
 
 });
