@@ -1,3 +1,4 @@
+/* Popup Base Styles */
 .popup {
     display: none;
     position: fixed;
@@ -13,10 +14,12 @@
     z-index: 1000;
 }
 
+/* Open popup */
 .popup--open {
     display: block;
 }
 
+/* Close button styles */
 .popup__close-button {
     position: relative;
     left: 450px;
@@ -27,11 +30,11 @@
     background-image: url('../svg/Vector.svg');
     background-repeat: no-repeat;
     background-size: 20px;
-    background-position: 60px center;
     padding-left: 10px;
     transition: transform 0.2s ease-in-out;
 }
 
+/* Popup form styles */
 .popup__form {
     display: flex;
     position: relative;
@@ -41,14 +44,11 @@
     padding: 0 20px;
 }
 
-.popup__form input[type="text"] {
+.popup__form input[type="text"], .popup__form input[type="file"] {
     margin-bottom: 10px;
 }
 
-.popup__form input[type="file"] {
-    margin-bottom: 10px;
-}
-
+/* Submit button */
 .popup__button-submit {
     position: absolute;
     left: 40px;
@@ -62,16 +62,12 @@
     height: 50.15px;
     transition: transform 0.2s ease-in-out;
 }
+
 .popup__button-submit:hover {
     background-color: #545454;
 }
-.popup__image {
-    max-width: 100%;
-    margin-top: 10px;
-    width: 430px;
-    height: 330px;
-}
 
+/* Title styles */
 .popup__title {
     position: absolute;
     bottom: 290px;
@@ -84,31 +80,57 @@
     font-family: 'Inter';
 }
 
-.popup__info {
+/* Info styles */
+.popup__info, .popup__load {
     border-style: none;
     border-bottom-style: solid;
 }
 
-.popup__load {
-    border-style: none;
-    border-bottom-style: solid;
+/* Image Viewer Popup */
+.popup--image-viewer {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 400px;
+    left: 700px;
+    width: 350px;
+    height: 650px;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
 }
+
+/* Content inside image viewer popup */
 .popup--image-viewer .popup__content {
     padding: 0;
     background-color: transparent;
     box-shadow: none;
+    max-width: 75vw;
+    max-height: 75vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
+/* Image inside the image viewer */
 .popup--image-viewer .popup__image {
     max-width: 75vw;
     max-height: 75vh;
+    object-fit: contain;
     border-radius: 8px;
 }
 
-.popup--image-viewer .popup__close-button {
-    top: 5px;
-    right: 5px;
-    background-color: rgba(0, 0, 0, 0.5);
+/* Close button inside the image viewer */
+.popup__close-button {
+    position: absolute;
+    bottom: 700px;
+    left: 400px;
+    background-image: url('../svg/Vector.svg');
+    background-repeat: no-repeat;
+    background-size: 30px;
+    padding-left: 10px;
+    transition: transform 0.2s ease-in-out;
     border-radius: 50%;
     color: white;
     font-size: 1.5rem;
@@ -117,13 +139,15 @@
     text-align: center;
     width: 30px;
     height: 30px;
+    cursor: pointer;
 }
 
 .popup--image-viewer .popup__close-button::after {
-    content: '\00d7'; /* Unicode for the multiplication (close) symbol */
-    color: white;
-    font-size: 24px;
-    line-height: 30px;
+    background-image: url('../svg/Vector.svg');
+    background-repeat: no-repeat;
+    background-size: 30px;
+    padding-left: 10px;
+    transition: transform 0.2s ease-in-out;
 }
 
 
@@ -131,25 +155,23 @@
     display: none;
 }
 
+
 @media screen and (max-width: 880px) {
     .popup {
         width: 282px;
         height: 322px;
         left: 32.5%;
-        right: 0;
     }
 
     .popup__button-submit {
         width: 238px;
         height: 46px;
         margin-left: 100px;
-        right: 0;
         transform: translate(-50%, -50%);
     }
 
     .popup__close-button {
         left: 250px;
-        right: 0;
     }
 }
 
@@ -158,23 +180,17 @@
         width: 282px;
         height: 322px;
         left: 35.5%;
-        right: 0;
-        bottom: 100%;
-    
     }
 
     .popup__button-submit {
         width: 238px;
         height: 46px;
         margin-left: 100px;
-        right: 0;
-        transform: translate(-50%, -50%);
     }
 
     .popup__close-button {
         left: 230px;
-        right: 0;
-        height: 26px;
         width: 26px;
+        height: 26px;
     }
 }

@@ -10,12 +10,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const openImagePopupButton = document.querySelector('#openPopupButton');
     const closeImagePopupButton = document.querySelector('#closeImagePopupButton');
     const imagePopup = document.querySelector('#imagePopup');
-    const popupImageViewer = document.querySelector('imageViewerPoppu');
+    const popupImageViewer = document.querySelector('#imageViewerPopup'); // Fixed selector
     const imageForm = document.querySelector('.popup__form[name="addImage"]');
     const previewImage = document.querySelector('#previewImage');
     const imageUrlInput = document.querySelector('#imageUrlInput');
     const cardGrid = document.querySelector('.card-section__grid');
-    const buttonLikeHeart = document.querySelector(".card-section__button-like")
+    const buttonLikeHeart = document.querySelector(".card-section__button-like");
 
     const initialCards = [
         { name: "Valle de Yosemite", link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/yosemite.jpg" },
@@ -33,38 +33,45 @@ document.addEventListener('DOMContentLoaded', () => {
     const createCard = (title, imageUrl) => {
         const card = document.createElement('div');
         card.className = 'card-section__card';
-
+    
         const img = document.createElement('img');
         img.className = 'card-section__card-img';
         img.src = imageUrl;
         img.alt = title;
-
+        img.dataset.imageSrc = imageUrl;
+    
+        // Add the event listener for opening the image viewer
+        img.addEventListener('click', () => {
+            popupImage.src = img.getAttribute('data-image-src');
+            imageViewerPopup.classList.add('popup--open');
+        });
+    
         const deleteButton = document.createElement('button');
         deleteButton.className = 'card-section__button card-section__button-delete';
         deleteButton.innerHTML = '<img src="./svg/Trash.svg" alt="Delete" title="Delete">';
         deleteButton.addEventListener('click', () => {
             card.remove();
         });
-
+    
         const cardTitle = document.createElement('h3');
         cardTitle.className = 'card-section__card-title';
         cardTitle.textContent = title;
-
+    
         const likeButton = document.createElement('button');
         likeButton.className = 'card-section__button card-section__button-like';
         likeButton.title = 'Like';
         likeButton.addEventListener('click', (e) => {
             e.target.classList.toggle('card-section__button-like--active'); 
         });
-
+    
         card.appendChild(img);
         card.appendChild(deleteButton);
         card.appendChild(cardTitle);
         card.appendChild(likeButton);
-
+    
         cardGrid.appendChild(card);
     };
-
+    
 
     // Load initial cards
     initialCards.forEach(card => createCard(card.name, card.link));
@@ -122,42 +129,26 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    buttonLikeHeart.querySelector("buttonLikeHeart").addEventListener("click", function (e) {
-        e.target.classList.toggle(".card-section__button-like");
-    })
 
-    const section = document.querySelector('.popup--image-viewer');
-  
-    // Select all card images within the section
-    const cards = section.querySelectorAll('.card__image');
+    buttonLikeHeart.addEventListener("click", function (e) {
+        e.target.classList.toggle("card-section__button-like--active");
+    });
+
+    const previewContainer = document.querySelector('.popup--image-viewer');
+    const closeButton = document.getElementById('closeImageViewerPopupButton');
+    const popupImage = document.getElementById('popupImage');
+
+    document.querySelectorAll('.card-section__card-img').forEach(img => {
+        img.addEventListener('click', () => {
+            popupImage.src = img.getAttribute('data-image-src'); 
+            imageViewerPopup.classList.add('popup--open'); 
+        });
+    });
     
-    // Select the popup container and elements
-    const popup = section.querySelector('.imageViewerPopup');
-    const popupImage = popup.querySelector('.popup__image');
-    const popupOverlay = popup.querySelector('.popup__overlay');
-  
-    // Add click event listener to each card image
-    cards.forEach(card => {
-      card.addEventListener('click', function() {
-        // Get the source of the clicked image
-        const imageUrl = this.src;
-        
-        // Set the source of the popup image
-        popupImage.src = imageUrl;
-        
-        // Show the popup
-        popup.classList.add('popup--visible');
-      });
+    closeButton.addEventListener('click', () => {
+        imageViewerPopup.classList.remove('popup--open');
     });
-  
-    // Add click event listener to the overlay to close the popup
-    popupOverlay.addEventListener('click', function() {
-      // Hide the popup
-      popup.classList.remove('popup--visible');
-      
-      // Clear the image source to prevent flickering
-      popupImage.src = '';
-    });
-  
+    
+    
 
 });
