@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-
     const editProfileButton = document.querySelector('#editProfileButton');
     const closeEditPopupButton = document.querySelector('#closeEditPopupButton');
     const editPopup = document.querySelector('#editPopup');
@@ -10,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const openImagePopupButton = document.querySelector('#openPopupButton');
     const closeImagePopupButton = document.querySelector('#closeImagePopupButton');
     const imagePopup = document.querySelector('#imagePopup');
-    const popupImageViewer = document.querySelector('#imageViewerPopup'); // Fixed selector
+    const popupImageViewer = document.querySelector('#imageViewerPopup'); 
     const imageForm = document.querySelector('.popup__form[name="addImage"]');
     const previewImage = document.querySelector('#previewImage');
     const imageUrlInput = document.querySelector('#imageUrlInput');
@@ -40,7 +39,6 @@ document.addEventListener('DOMContentLoaded', () => {
         img.alt = title;
         img.dataset.imageSrc = imageUrl;
     
-        // Add the event listener for opening the image viewer
         img.addEventListener('click', () => {
             popupImage.src = img.getAttribute('data-image-src');
             imageViewerPopup.classList.add('popup--open');
@@ -72,8 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
         cardGrid.appendChild(card);
     };
     
-
-    // Load initial cards
+    
     initialCards.forEach(card => createCard(card.name, card.link));
 
     editProfileButton.addEventListener('click', () => {
@@ -129,7 +126,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-
     buttonLikeHeart.addEventListener("click", function (e) {
         e.target.classList.toggle("card-section__button-like--active");
     });
@@ -140,15 +136,28 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.querySelectorAll('.card-section__card-img').forEach(img => {
         img.addEventListener('click', () => {
-            popupImage.src = img.getAttribute('data-image-src'); 
-            imageViewerPopup.classList.add('popup--open'); 
+            const imageUrl = img.getAttribute('data-image-src');
+            openImagePopup(imageUrl); 
         });
     });
-    
-    closeButton.addEventListener('click', () => {
-        imageViewerPopup.classList.remove('popup--open');
-    });
-    
-    
+
+    const openImagePopup = (imageUrl) => {
+        if (previewContainer && popupImage) {
+            popupImage.src = imageUrl; 
+            previewContainer.classList.add('popup--open'); 
+        }
+    };
+
+    const closeImagePopup = () => {
+        if (previewContainer) {
+            previewContainer.classList.remove('popup--open'); 
+        }
+    };
+
+    if (closeButton) {
+        closeButton.addEventListener('click', () => {
+            closeImagePopup();
+        });
+    }
 
 });
