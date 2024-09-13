@@ -32,9 +32,8 @@
             </header>
             <section class="popup" id="editPopup">
                 <h2 class="visually-hidden">Popup Form</h2>
-                <button class="popup__close-button" id="closeEditPopupButton" type="button" title="close">
-                    <img src="./svg/Close%20Icon.svg" alt="close">
-                </button>
+                <button class="popup__close-button" id="closeEditPopupButton" type="button" title="close"></button>
+                <img src="./svg/Close%20Icon.svg" alt="close">
                 <h3 class="popup__title">Editar perfil</h3>
                 <form class="popup__form" name="editProfile">
                     <input class="popup__info" type="text" name="name" placeholder="Titulo" required>
@@ -44,9 +43,8 @@
             </section>
             <section class="popup" id="imagePopup">
                 <h2 class="visually-hidden">Popup Form</h2>
-                <button class="popup__close-button" id="closeImagePopupButton" type="button" title="close">
-                    <img src="./svg/Close%20Icon.svg" alt="close">
-                </button>
+                <button class="popup__close-button" id="closeImagePopupButton" type="button" title="close"></button>
+                <img src="./svg/Close%20Icon.svg" alt="close">
                 <h3 class="popup__title">Agregar Imagen</h3>
                 <form class="popup__form" name="addImage">
                     <input class="popup__info" type="text" name="name" placeholder="Titulo" required>
@@ -58,7 +56,7 @@
             </section>
             <template id="popupTemplate">
                 <div class="popup--image-viewer">
-                    <button class="popup__close-button" id="closeImageViewerPopupButton"></button>
+                    <button class="popup__close-template-button" id="closeImageViewerPopupButton" title="close"></button>
                     <img id="popupImage" class="popup__image" alt="Popup Image" />
                 </div>
             </template>
