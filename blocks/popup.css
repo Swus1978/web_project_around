@@ -62,6 +62,19 @@
     height: 50.15px;
     transition: transform 0.2s ease-in-out;
 }
+.popup--image-viewer .popup__close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-image: url('../svg/Vector.svg');
+    background-repeat: no-repeat;
+    background-size: 30px;
+    padding: 10px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
 
 .popup__button-submit:hover {
     background-color: #545454;
@@ -86,14 +99,13 @@
     border-bottom-style: solid;
 }
 
-/* Image Viewer Popup */
-.popup--image-viewer {
-    display: none; /* Hidden by default */
+.popup--image-viewer{
+    display: none;
     position: fixed;
     top: 400px;
     left: 700px;
-    width: 350px;
-    height: 650px;
+    max-width: 75vw;
+    max-height: 75vh;
     background: rgba(0, 0, 0, 0.7);
     display: flex;
     align-items: center;
@@ -101,24 +113,14 @@
     z-index: 1000;
 }
 
-/* Content inside image viewer popup */
-.popup--image-viewer {
-    padding: 0;
-    background-color: transparent;
-    box-shadow: none;
-    max-width: 75vw;
-    max-height: 75vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
 /* Image inside the image viewer */
 .popup--image-viewer .popup__image {
-    max-width: 75vw;
-    max-height: 75vh;
+
+    width: 350px;
+    height: 650px;
     object-fit: contain;
     border-radius: 8px;
+    
 }
 
 /* Close button image viewer */

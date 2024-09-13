@@ -30,7 +30,6 @@
                     <button class="author__button" id="openPopupButton" type="button" title="add"></button>
                 </div>
             </header>
-            
             <section class="popup" id="editPopup">
                 <h2 class="visually-hidden">Popup Form</h2>
                 <button class="popup__close-button" id="closeEditPopupButton" type="button" title="close">
@@ -43,7 +42,6 @@
                     <button class="popup__button popup__button-submit" type="submit">Guardar</button>
                 </form>
             </section>
-            
             <section class="popup" id="imagePopup">
                 <h2 class="visually-hidden">Popup Form</h2>
                 <button class="popup__close-button" id="closeImagePopupButton" type="button" title="close">
@@ -54,20 +52,20 @@
                     <input class="popup__info" type="text" name="name" placeholder="Titulo" required>
                     <label for="imageUrlInput">Pegar URL de imagen:</label>
                     <input class="popup__load" type="text" id="imageUrlInput" placeholder="https://example.com/image.jpg" required>
-                    <img class="popup__image" id="previewImage" src="#" alt="Preview Image">
+                    <img class="popup__image" id="previewImage" src="#" alt="Preview Image" style="display: none;">
                     <button class="popup__button popup__button-submit" type="submit">Crear</button>
                 </form>
             </section>
-            <section class="popup" id="imageViewerPopup">
-                <h2 class="visually-hidden">Popup Preview</h2>
-                <div class=" popup--image-viewer">
-                    <img class="popup__image" id="popupImage" src="#" alt="Popup Image">
-                    <button id="closeImageViewerPopupButton" class="popup__close-button" type="button" title="Close"></button>
+            <template id="popupTemplate">
+                <div class="popup popup--image-viewer">
+                    <button class="popup__close-button" id="closeImageViewerPopupButton"></button>
+                    <img id="popupImage" class="popup__image" alt="Popup Image" />
+                    <p id="popupImageName"></p>
                 </div>
-            </section>       
+            </template>
             <section class="card-section">
                 <div class="card-section__grid">
-                
+                   
                 </div>
             </section>
         </main>
