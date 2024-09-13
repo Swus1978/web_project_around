@@ -51,6 +51,17 @@
     cursor: pointer;
   
 }
+.card-section__card {
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    opacity: 1;
+    transform: scale(1);
+}
+
+.card-section__card--removing {
+    opacity: 0;
+    transform: scale(0.95);
+}
+
 
 .card-section__button-like {
     border: none;

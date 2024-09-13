@@ -1,4 +1,3 @@
-
 const togglePopup = (popup) => {
     popup.classList.toggle('popup--open');
 };
@@ -20,8 +19,18 @@ const createCard = (title, imageUrl, cardGrid) => {
     const deleteButton = document.createElement('button');
     deleteButton.className = 'card-section__button card-section__button-delete';
     deleteButton.innerHTML = '<img src="./svg/Trash.svg" alt="Delete" title="Delete">';
+
+    // Updated delete button logic with transition
     deleteButton.addEventListener('click', () => {
-        card.remove();
+        card.classList.add('card-section__card--removing');
+        
+        // Listen for the end of the transition and then remove the card
+        card.addEventListener('transitionend', () => {
+            card.remove();
+        }, { once: true });
+
+        // Force reflow to ensure the transition triggers
+        window.getComputedStyle(card).opacity;
     });
 
     const cardTitle = document.createElement('h3');
@@ -43,11 +52,9 @@ const createCard = (title, imageUrl, cardGrid) => {
     cardGrid.appendChild(card);
 };
 
-
 const initializeCards = (initialCards, cardGrid) => {
     initialCards.forEach(card => createCard(card.name, card.link, cardGrid));
 };
-
 
 const handleEditProfile = (editProfileButton, editPopup, editForm, authorTitle, authorText) => {
     editProfileButton.addEventListener('click', () => {
@@ -81,7 +88,6 @@ const handleEditProfile = (editProfileButton, editPopup, editForm, authorTitle, 
         }
     });
 };
-
 
 const handleImagePopup = (openImagePopupButton, imagePopup, closeImagePopupButton, imageUrlInput, previewImage, imageForm, cardGrid) => {
     openImagePopupButton.addEventListener('click', () => togglePopup(imagePopup));
@@ -119,13 +125,15 @@ const createImageViewerPopup = (link, name) => {
     const template = document.querySelector('#popupTemplate').content.cloneNode(true);
 
     const popupImage = template.querySelector('#popupImage');
+    const popupImageName = template.querySelector('#popupImageName'); 
     const closeImageViewerPopupButton = template.querySelector('#closeImageViewerPopupButton');
 
     popupImage.src = link;
     popupImage.alt = name;
 
-    document.body.appendChild(template);
+    popupImageName.textContent = name;
 
+    document.body.appendChild(template);
     const imageViewerPopup = document.querySelector('.popup--image-viewer');
     imageViewerPopup.style.display = 'block';
 
@@ -134,7 +142,6 @@ const createImageViewerPopup = (link, name) => {
         imageViewerPopup.remove();
     });
 };
-
 
 const addImageClickEvents = () => {
     document.querySelectorAll('.card-section__card-img').forEach(img => {
@@ -171,16 +178,9 @@ const init = () => {
         { name: "Lago di Braies", link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/lago.jpg" }
     ];
 
-
     initializeCards(initialCards, cardGrid);
-
-
     handleEditProfile(editProfileButton, editPopup, editForm, authorTitle, authorText);
-
-
     handleImagePopup(openImagePopupButton, imagePopup, closeImagePopupButton, imageUrlInput, previewImage, imageForm, cardGrid);
-
-   
     addImageClickEvents();
 };
 
