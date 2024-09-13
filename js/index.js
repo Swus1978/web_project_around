@@ -1,9 +1,8 @@
-// Toggle popup visibility
+
 const togglePopup = (popup) => {
     popup.classList.toggle('popup--open');
 };
 
-// Create a new card
 const createCard = (title, imageUrl, cardGrid) => {
     const card = document.createElement('div');
     card.className = 'card-section__card';
@@ -15,7 +14,7 @@ const createCard = (title, imageUrl, cardGrid) => {
     img.dataset.imageSrc = imageUrl;
 
     img.addEventListener('click', () => {
-        createImageViewerPopup(imageUrl, title); // Open the image viewer popup
+        createImageViewerPopup(imageUrl, title); 
     });
 
     const deleteButton = document.createElement('button');
@@ -44,12 +43,12 @@ const createCard = (title, imageUrl, cardGrid) => {
     cardGrid.appendChild(card);
 };
 
-// Initialize cards
+
 const initializeCards = (initialCards, cardGrid) => {
     initialCards.forEach(card => createCard(card.name, card.link, cardGrid));
 };
 
-// Edit profile logic
+
 const handleEditProfile = (editProfileButton, editPopup, editForm, authorTitle, authorText) => {
     editProfileButton.addEventListener('click', () => {
         editForm.querySelector('input[name="name"]').value = authorTitle.textContent;
@@ -83,7 +82,7 @@ const handleEditProfile = (editProfileButton, editPopup, editForm, authorTitle, 
     });
 };
 
-// Image popup logic
+
 const handleImagePopup = (openImagePopupButton, imagePopup, closeImagePopupButton, imageUrlInput, previewImage, imageForm, cardGrid) => {
     openImagePopupButton.addEventListener('click', () => togglePopup(imagePopup));
     closeImagePopupButton.addEventListener('click', () => togglePopup(imagePopup));
@@ -116,7 +115,6 @@ const handleImagePopup = (openImagePopupButton, imagePopup, closeImagePopupButto
     });
 };
 
-// Create image viewer popup
 const createImageViewerPopup = (link, name) => {
     const template = document.querySelector('#popupTemplate').content.cloneNode(true);
 
@@ -138,7 +136,6 @@ const createImageViewerPopup = (link, name) => {
 };
 
 
-// Add event listeners to images for viewing
 const addImageClickEvents = () => {
     document.querySelectorAll('.card-section__card-img').forEach(img => {
         img.addEventListener('click', () => {
@@ -149,7 +146,6 @@ const addImageClickEvents = () => {
     });
 };
 
-// Main function to initialize everything
 const init = () => {
     const editProfileButton = document.querySelector('#editProfileButton');
     const closeEditPopupButton = document.querySelector('#closeEditPopupButton');
@@ -175,18 +171,17 @@ const init = () => {
         { name: "Lago di Braies", link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/lago.jpg" }
     ];
 
-    // Initialize cards
+
     initializeCards(initialCards, cardGrid);
 
-    // Handle profile edit
+
     handleEditProfile(editProfileButton, editPopup, editForm, authorTitle, authorText);
 
-    // Handle image popup
+
     handleImagePopup(openImagePopupButton, imagePopup, closeImagePopupButton, imageUrlInput, previewImage, imageForm, cardGrid);
 
-    // Add image click events for image viewing
+   
     addImageClickEvents();
 };
 
-// Call the init function after script loads
 init();
