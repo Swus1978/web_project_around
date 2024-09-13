@@ -1,4 +1,3 @@
-/* Popup Base Styles */
 .popup {
     display: none;
     position: fixed;
@@ -14,12 +13,38 @@
     z-index: 1000;
 }
 
-/* Open popup */
+.popupTemplate {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 430px;
+    height: 330px;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000; 
+}
+
 .popup--open {
     display: block;
 }
 
-/* Close button styles */
+.popup--image-viewer {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    width: auto;
+    height: auto;
+    max-width: 75vw;
+    max-height: 75vh;
+}
+
+
 .popup__close-button {
     position: relative;
     left: 450px;
@@ -34,7 +59,6 @@
     transition: transform 0.2s ease-in-out;
 }
 
-/* Popup form styles */
 .popup__form {
     display: flex;
     position: relative;
@@ -48,7 +72,7 @@
     margin-bottom: 10px;
 }
 
-/* Submit button */
+
 .popup__button-submit {
     position: absolute;
     left: 40px;
@@ -80,7 +104,7 @@
     background-color: #545454;
 }
 
-/* Title styles */
+
 .popup__title {
     position: absolute;
     bottom: 290px;
@@ -93,41 +117,27 @@
     font-family: 'Inter';
 }
 
-/* Info styles */
+
 .popup__info, .popup__load {
     border-style: none;
     border-bottom-style: solid;
 }
 
-.popup--image-viewer{
-    display: none;
-    position: fixed;
-    top: 400px;
-    left: 700px;
-    max-width: 75vw;
-    max-height: 75vh;
-    background: rgba(0, 0, 0, 0.7);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 1000;
-}
 
-/* Image inside the image viewer */
 .popup--image-viewer .popup__image {
-
+    position: relative;
+    top: 80px;
     width: 350px;
     height: 650px;
-    object-fit: contain;
+    object-fit: none;
     border-radius: 8px;
     
 }
 
-/* Close button image viewer */
 .popup__close-button {
     position: absolute;
-    bottom: 700px;
-    left: 400px;
+    bottom: 10px;
+    left: 350px;
     background-image: url('../svg/Vector.svg');
     background-repeat: no-repeat;
     background-size: 30px;

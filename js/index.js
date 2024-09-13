@@ -121,23 +121,22 @@ const createImageViewerPopup = (link, name) => {
     const template = document.querySelector('#popupTemplate').content.cloneNode(true);
 
     const popupImage = template.querySelector('#popupImage');
-    const popupImageName = template.querySelector('#popupImageName');
     const closeImageViewerPopupButton = template.querySelector('#closeImageViewerPopupButton');
 
     popupImage.src = link;
     popupImage.alt = name;
-    popupImageName.textContent = name;
 
     document.body.appendChild(template);
 
     const imageViewerPopup = document.querySelector('.popup--image-viewer');
-    imageViewerPopup.classList.add('popup--open');
+    imageViewerPopup.style.display = 'block';
 
     closeImageViewerPopupButton.addEventListener('click', () => {
-        imageViewerPopup.classList.remove('popup--open');
+        imageViewerPopup.style.display = 'none';
         imageViewerPopup.remove();
     });
 };
+
 
 // Add event listeners to images for viewing
 const addImageClickEvents = () => {
