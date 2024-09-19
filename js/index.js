@@ -85,6 +85,13 @@ const handleEditProfile = (editProfileButton, editPopup, editForm, authorTitle, 
         } else {
             alert('No se han realizado cambios.');
         }
+
+        if (hasChanges) {
+            editForm.reset();
+            togglePopup(editPopup);
+        } else {
+            alert('No se han realizado cambios.');
+        }
     });
 };
 
