@@ -20,16 +20,15 @@ const createCard = (title, imageUrl, cardGrid) => {
     deleteButton.className = 'card-section__button card-section__button-delete';
     deleteButton.innerHTML = '<img src="./svg/Trash.svg" alt="Delete" title="Delete">';
 
-    // Updated delete button logic with transition
     deleteButton.addEventListener('click', () => {
         card.classList.add('card-section__card--removing');
         
-        // Listen for the end of the transition and then remove the card
+        
         card.addEventListener('transitionend', () => {
             card.remove();
         }, { once: true });
 
-        // Force reflow to ensure the transition triggers
+    
         window.getComputedStyle(card).opacity;
     });
 
@@ -122,6 +121,12 @@ const handleImagePopup = (openImagePopupButton, imagePopup, closeImagePopupButto
 };
 
 const createImageViewerPopup = (link, name) => {
+
+    const existingPopup = document.querySelector('.popup--image-viewer');
+    if (existingPopup) {
+        existingPopup.remove();  
+    }
+
     const template = document.querySelector('#popupTemplate').content.cloneNode(true);
 
     const popupImage = template.querySelector('#popupImage');
@@ -142,6 +147,7 @@ const createImageViewerPopup = (link, name) => {
         imageViewerPopup.remove();
     });
 };
+
 
 const addImageClickEvents = () => {
     document.querySelectorAll('.card-section__card-img').forEach(img => {
