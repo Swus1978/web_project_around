@@ -62,6 +62,10 @@ const handleEditProfile = (editProfileButton, editPopup, editForm, authorTitle, 
         togglePopup(editPopup);
     });
 
+    closeEditPopupButton.addEventListener('click', () => {
+        togglePopup(editPopup);
+    });
+
     editForm.addEventListener('submit', (event) => {
         event.preventDefault();
         const title = editForm.querySelector('input[name="name"]').value;
@@ -86,12 +90,7 @@ const handleEditProfile = (editProfileButton, editPopup, editForm, authorTitle, 
             alert('No se han realizado cambios.');
         }
 
-        if (hasChanges) {
-            editForm.reset();
-            togglePopup(editPopup);
-        } else {
-            alert('No se han realizado cambios.');
-        }
+        
     });
 };
 
