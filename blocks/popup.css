@@ -120,7 +120,9 @@
     font-family: 'Inter';
 }
 
-
+.popup__label {
+     color:  #545454;
+}
 .popup__info, .popup__load {
     border-style: none;
     border-bottom-style: solid;

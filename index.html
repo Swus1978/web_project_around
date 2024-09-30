@@ -32,19 +32,18 @@
             </header>
             <section class="popup" id="editPopup">
                 <h2 class="visually-hidden">Popup Form</h2>
-                <button class="popup__close-button" id="closeEditPopupButton" type="button" title="close"></button>
-                <img src="./svg/Close%20Icon.svg" alt="close">
-                <h3 class="popup__title">Editar perfil</h3>
+                <button class="popup__close-button" id="closeEditPopupButton" type="button" title="close" aria-label="Close"></button>
+                <h3 class="popup__title">Editar perfil</h3>  
                 <form class="popup__form" name="editProfile">
                     <input class="popup__info" type="text" name="name" placeholder="Titulo" required>
                     <input class="popup__info" type="text" name="text" placeholder="Texto" required>
                     <button class="popup__button popup__button-submit" type="submit">Guardar</button>
                 </form>
             </section>
+            
             <section class="popup" id="imagePopup">
                 <h2 class="visually-hidden">Popup Form</h2>
-                <button class="popup__close-button" id="closeImagePopupButton" type="button" title="close"></button>
-                <img src="./svg/Close%20Icon.svg" alt="close">
+                <button class="popup__close-button" id="closeImagePopupButton" type="button" title="close" aria-label="Close"></button>
                 <h3 class="popup__title">Agregar Imagen</h3>
                 <form class="popup__form" name="addImage">
                     <input class="popup__info" type="text" name="name" placeholder="Titulo" required>
@@ -54,6 +53,7 @@
                     <button class="popup__button popup__button-submit" type="submit">Crear</button>
                 </form>
             </section>
+            
             <template id="popupTemplate">
                 <div class="popup--image-viewer">
                     <button class="popup__close-template-button" id="closeImageViewerPopupButton" title="close"></button>
