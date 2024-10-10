@@ -12,7 +12,6 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     z-index: 1000;
 }
-
 .popupTemplate {
     display: none;
     position: fixed;
@@ -26,11 +25,9 @@
     z-index: 1000; 
    
 }
-
 .popup--open {
     display: block;
 }
-
 .popup--image-viewer {
     display: none;
     position: fixed;
@@ -44,8 +41,6 @@
     max-height: 75vh;
     border-radius: 10px;
 }
-
-
 .popup__close-button {
     position: relative;
     left: 450px;
@@ -61,7 +56,6 @@
     padding-left: 10px;
     transition: transform 0.2s ease-in-out;
 }
-
 .popup__form {
     display: flex;
     position: relative;
@@ -70,12 +64,9 @@
     margin-bottom: 50px;
     padding: 0 20px;
 }
-
 .popup__form input[type="text"], .popup__form input[type="file"] {
     margin-bottom: 10px;
 }
-
-
 .popup__button-submit {
     position: absolute;
     left: 40px;
@@ -101,13 +92,9 @@
     background-color: transparent;
     cursor: pointer;
 }
-
-
 .popup__button-submit:hover {
     background-color: #545454;
 }
-
-
 .popup__title {
     position: absolute;
     bottom: 290px;
@@ -119,16 +106,10 @@
     height: 23px;
     font-family: 'Inter';
 }
-
-.popup__label {
-     color:  #545454;
-}
 .popup__info, .popup__load {
     border-style: none;
     border-bottom-style: solid;
 }
-
-
 .popup--image-viewer .popup__image {
     position: relative;
     top: 80px;
@@ -138,7 +119,6 @@
     border-radius: 10px;
     
 }
-
 .popup__close-template-button {
     position: absolute;
     top: 30px;
@@ -151,7 +131,6 @@
     background-color: transparent;
     cursor: pointer;
 }
-
 .popup--image-viewer .popup__close-button::after {
     background-image: url('../svg/Vector.svg');
     background-repeat: no-repeat;
@@ -159,47 +138,36 @@
     padding-left: 10px;
     transition: transform 0.2s ease-in-out;
 }
-
-
 .visually-hidden {
     display: none;
 }
-
-
-
-
 @media screen and (max-width: 880px) {
     .popup {
         width: 282px;
         height: 322px;
         left: 32.5%;
     }
-
     .popup__button-submit {
         width: 238px;
         height: 46px;
         margin-left: 100px;
         transform: translate(-50%, -50%);
     }
-
     .popup__close-button {
         left: 250px;
     }
 }
-
 @media screen and (max-width: 320px) {
     .popup {
         width: 282px;
         height: 322px;
         left: 35.5%;
     }
-
     .popup__button-submit {
         width: 238px;
         height: 46px;
         margin-left: 100px;
     }
-
     .popup__close-button {
         left: 230px;
         width: 26px;
