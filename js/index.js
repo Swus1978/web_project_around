@@ -150,7 +150,7 @@ const addImageClickEvents = () => {
 
 
 
-// Form validation methods
+
 const showInputError = (formElement, inputElement, errorMessage) => {
     const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
     inputElement.classList.add("form__input_type_error");
@@ -177,14 +177,6 @@ const hasInvalidInput = (inputList) => {
     return inputList.some((inputElement) => {
         return !inputElement.validity.valid;
     });
-};
-  
-const toggleButtonState = (inputList, buttonElement) => {
-    if (hasInvalidInput(inputList)) {
-        buttonElement.classList.add("button_inactive");
-    } else {
-        buttonElement.classList.remove("button_inactive");
-    }
 };
   
 const setEventListeners = (formElement) => {
