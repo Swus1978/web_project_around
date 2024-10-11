@@ -5,7 +5,7 @@
 
 .form__input:focus {
   border-bottom-color: #007DFF;
-  outline: none; /* Removes default focus outline */
+  outline: none; 
 }
 
 .form__input:valid {
@@ -16,8 +16,22 @@
   border-bottom: 1px solid red;
 }
 
+.form__input-error {
+  display: none;
+  color: red;
+  font-size: 12px;
+}
 
-/* Form in Popup */
+.form__input:invalid + .form__input-error {
+  display: block;
+}
+
+.form__input:valid + .form__input-error {
+  display: none;
+}
+
+
+
 .form {
   display: flex;
   flex-direction: column;
@@ -35,7 +49,7 @@
 }
 
 
-/* Responsive Adjustments */
+
 @media screen and (max-width: 880px) {
   .form__input {
       font-size: 14px;
