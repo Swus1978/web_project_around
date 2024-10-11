@@ -1,17 +1,49 @@
-/* .form__input:hover {
-    border-bottom-color: #000;
+
+.form__input:hover {
+  border-bottom-color: #000;
+}
+
+.form__input:focus {
+  border-bottom-color: #007DFF;
+  outline: none; /* Removes default focus outline */
+}
+
+.form__input:valid {
+  border-bottom: 1px solid green;
+}
+
+.form__input:invalid {
+  border-bottom: 1px solid red;
+}
+
+
+/* Form in Popup */
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form__field {
+  margin-bottom: 20px;
+}
+
+.form__input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+
+/* Responsive Adjustments */
+@media screen and (max-width: 880px) {
+  .form__input {
+      font-size: 14px;
   }
-  
-  .form__input:focus {
-    border-bottom-color: #007DFF;
+}
+
+@media screen and (max-width: 320px) {
+  .form__input {
+      font-size: 12px;
   }
-  
-  .form__input:valid {
-    border-bottom: 1px solid green;
-  }
-  
-  .form__input:invalid {
-    border-bottom: 1px solid red;
-  }
-  
-  */
+}
