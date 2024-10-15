@@ -208,6 +208,8 @@ const enableValidation = () => {
   
 enableValidation();
 
+
+
 const init = () => {
     const editProfileButton = document.querySelector('#editProfileButton');
     const closeEditPopupButton = document.querySelector('#closeEditPopupButton');
