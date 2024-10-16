@@ -140,7 +140,7 @@
     position: absolute;
     top: 30px;
    left: 300px;
-    background-image: url('../svg/Vector.svg');
+    background-image: url('../images/Close\ Icon.png');
     background-repeat: no-repeat;
     background-size: 30px;
     padding: 30px;
@@ -149,7 +149,7 @@
     cursor: pointer;
 }
 .popup--image-viewer .popup__close-button::after {
-    background-image: url('../svg/Vector.svg');
+    background-image: url('../images/Close\ Icon.png');
     background-repeat: no-repeat;
     background-size: 30px;
     padding-left: 10px;
