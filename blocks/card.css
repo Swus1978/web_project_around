@@ -1,14 +1,13 @@
 .card-section {
     max-width: 1280px;
     margin: 0 auto;
-    margin: 250px;
-    
+    padding: 250px 0; /* Adjusted to use padding instead of margin for spacing */
 }
+
 .card-section__grid {
     display: grid;
     grid-template-columns: repeat(3, 282px);
     gap: 20px;
-    
 }
 
 .card-section__card {
@@ -17,7 +16,14 @@
     background-color: #fff;
     text-align: center;
     border-radius: 10px;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    opacity: 1;
+    transform: scale(1);
+}
 
+.card-section__card--removing {
+    opacity: 0;
+    transform: scale(0.95);
 }
 
 .card__visually-hidden {
@@ -49,19 +55,7 @@
     border: none;
     background: none;
     cursor: pointer;
-  
 }
-.card-section__card {
-    transition: opacity 0.3s ease, transform 0.3s ease;
-    opacity: 1;
-    transform: scale(1);
-}
-
-.card-section__card--removing {
-    opacity: 0;
-    transform: scale(0.95);
-}
-
 
 .card-section__button-like {
     border: none;
@@ -76,17 +70,16 @@
     transform: translateY(-50%);
     opacity: 0.5;
     transition: 0.3s;
-  }
-  
-  .card-section__button-like:hover {
+}
+
+.card-section__button-like:hover {
     transform: scale(1.3);
-  }
-  
-  .card-section__button-like--active {
+}
+
+.card-section__button-like--active {
     opacity: 1;
     background: url(https://practicum-content.s3.us-west-1.amazonaws.com/web-code/dom/moved_heart-filled.svg) center no-repeat;
-  }
-
+}
 
 .card-section__button-delete {
     position: absolute;
@@ -111,7 +104,6 @@
 @media (max-width: 880px) {
     .card-section__grid {
         grid-template-columns: 282px;
-        
     }
     .card-section__card {
         top: 100px;
@@ -124,12 +116,10 @@
     }
     .card-section__card {
         top: 100px;
-        transform: translate(-70%, -0%);
+        transform: translate(-70%, 0%);
     }
     .card-section__button-like {
         top: 320px;
         margin-right: 20px;
     }
-
-    
 }

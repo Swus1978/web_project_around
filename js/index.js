@@ -1,8 +1,39 @@
-const togglePopup = (popup) => {
-    popup.classList.toggle('popup--open');
-};
+document.addEventListener('DOMContentLoaded', () => {
+  const overlay = document.getElementById('overlay');
+  const editProfileButton = document.getElementById('editProfileButton');
+  const openPopupButton = document.getElementById('openPopupButton');
+  const closeEditPopupButton = document.getElementById('closeEditPopupButton');
+  const closeImagePopupButton = document.getElementById('closeImagePopupButton');
+  const editPopup = document.getElementById('editPopup');
+  const imagePopup = document.getElementById('imagePopup');
 
-const createCard = (title, imageUrl, cardGrid) => {
+  
+  const togglePopup = (popup) => {
+    popup.classList.toggle('popup--open');
+    if (popup.classList.contains('popup--open')) {
+      overlay.classList.add('overlay--active'); 
+      document.body.style.overflow = 'hidden'; 
+    } else {
+      overlay.classList.remove('overlay--active'); 
+      document.body.style.overflow = 'auto'; 
+    }
+  };
+
+
+  editProfileButton.addEventListener('click', () => togglePopup(editPopup));
+  openPopupButton.addEventListener('click', () => togglePopup(imagePopup));
+
+
+  closeEditPopupButton.addEventListener('click', () => togglePopup(editPopup));
+  closeImagePopupButton.addEventListener('click', () => togglePopup(imagePopup));
+
+
+  overlay.addEventListener('click', () => {
+    document.querySelectorAll('.popup--open').forEach(popup => togglePopup(popup));
+  });
+
+ 
+  const createCard = (title, imageUrl, cardGrid) => {
     const card = document.createElement('div');
     card.className = 'card-section__card';
 
@@ -12,20 +43,20 @@ const createCard = (title, imageUrl, cardGrid) => {
     img.alt = title;
     img.dataset.imageSrc = imageUrl;
     img.addEventListener('click', () => {
-        createImageViewerPopup(imageUrl, title); 
+      createImageViewerPopup(imageUrl, title); 
     });
 
     const deleteButton = document.createElement('button');
     deleteButton.className = 'card-section__button card-section__button-delete';
     deleteButton.innerHTML = '<img src="./svg/Trash.svg" alt="Delete" title="Delete">';
     deleteButton.addEventListener('click', () => {
-        card.classList.add('card-section__card--removing');
-        
-        card.addEventListener('transitionend', () => {
-            card.remove();
-        }, { once: true });
-    
-        window.getComputedStyle(card).opacity;
+      card.classList.add('card-section__card--removing');
+      
+      card.addEventListener('transitionend', () => {
+        card.remove();
+      }, { once: true });
+  
+      window.getComputedStyle(card).opacity;
     });
 
     const cardTitle = document.createElement('h3');
@@ -36,7 +67,7 @@ const createCard = (title, imageUrl, cardGrid) => {
     likeButton.className = 'card-section__button card-section__button-like';
     likeButton.title = 'Like';
     likeButton.addEventListener('click', (e) => {
-        e.target.classList.toggle('card-section__button-like--active');
+      e.target.classList.toggle('card-section__button-like--active');
     });
 
     card.appendChild(img);
@@ -44,79 +75,82 @@ const createCard = (title, imageUrl, cardGrid) => {
     card.appendChild(cardTitle);
     card.appendChild(likeButton);
     cardGrid.appendChild(card);
-};
+  };
 
-const initializeCards = (initialCards, cardGrid) => {
+
+  const initializeCards = (initialCards, cardGrid) => {
     initialCards.forEach(card => createCard(card.name, card.link, cardGrid));
-};
+  };
 
-const handleEditProfile = (editProfileButton, editPopup, editForm, authorTitle, authorText) => {
+
+  const handleEditProfile = (editProfileButton, editPopup, editForm, authorTitle, authorText) => {
     editProfileButton.addEventListener('click', () => {
-        editForm.querySelector('input[name="name"]').value = authorTitle.textContent;
-        editForm.querySelector('input[name="text"]').value = authorText.textContent;
-        togglePopup(editPopup);
+      editForm.querySelector('input[name="name"]').value = authorTitle.textContent;
+      editForm.querySelector('input[name="text"]').value = authorText.textContent;
+      togglePopup(editPopup);
     });
 
     editForm.addEventListener('submit', (event) => {
-        event.preventDefault();
-        const title = editForm.querySelector('input[name="name"]').value;
-        const text = editForm.querySelector('input[name="text"]').value;
-        let hasChanges = false;
+      event.preventDefault();
+      const title = editForm.querySelector('input[name="name"]').value;
+      const text = editForm.querySelector('input[name="text"]').value;
+      let hasChanges = false;
 
-        if (title && title !== authorTitle.textContent) {
-            authorTitle.textContent = title;
-            hasChanges = true;
-        }
-        if (text && text !== authorText.textContent) {
-            authorText.textContent = text;
-            hasChanges = true;
-        }
+      if (title && title !== authorTitle.textContent) {
+        authorTitle.textContent = title;
+        hasChanges = true;
+      }
+      if (text && text !== authorText.textContent) {
+        authorText.textContent = text;
+        hasChanges = true;
+      }
 
-        if (hasChanges) {
-            editForm.reset();
-            togglePopup(editPopup);
-        } else {
-            alert('No se han realizado cambios.');
-        }
+      if (hasChanges) {
+        editForm.reset();
+        togglePopup(editPopup);
+      } else {
+        alert('No se han realizado cambios.');
+      }
     });
-};
+  };
 
-const handleImagePopup = (openImagePopupButton, imagePopup, closeImagePopupButton, imageUrlInput, previewImage, imageForm, cardGrid) => {
+  const handleImagePopup = (openImagePopupButton, imagePopup, closeImagePopupButton, imageUrlInput, previewImage, imageForm, cardGrid) => {
     openImagePopupButton.addEventListener('click', () => togglePopup(imagePopup));
     closeImagePopupButton.addEventListener('click', () => togglePopup(imagePopup));
 
     imageUrlInput.addEventListener('input', () => {
-        const url = imageUrlInput.value;
-        if (url) {
-            previewImage.src = url;
-            previewImage.style.display = 'block';
-        } else {
-            previewImage.src = '#';
-            previewImage.style.display = 'none';
-        }
+      const url = imageUrlInput.value;
+      if (url) {
+        previewImage.src = url;
+        previewImage.style.display = 'block';
+      } else {
+        previewImage.src = '#';
+        previewImage.style.display = 'none';
+      }
     });
 
     imageForm.addEventListener('submit', (event) => {
-        event.preventDefault();
-        const title = imageForm.querySelector('input[name="name"]').value;
-        const imageUrl = previewImage.src;
+      event.preventDefault();
+      const title = imageForm.querySelector('input[name="name"]').value;
+      const imageUrl = previewImage.src;
 
-        if (title && imageUrl && imageUrl !== '#') {
-            createCard(title, imageUrl, cardGrid);
-            imageForm.reset();
-            previewImage.src = '#';
-            previewImage.style.display = 'none';
-            togglePopup(imagePopup);
-        } else {
-            alert('Por favor, proporcione un título y una imagen.');
-        }
+      if (title && imageUrl && imageUrl !== '#') {
+        createCard(title, imageUrl, cardGrid);
+        imageForm.reset();
+        previewImage.src = '#';
+        previewImage.style.display = 'none';
+        togglePopup(imagePopup);
+      } else {
+        alert('Por favor, proporcione un título y una imagen.');
+      }
     });
-};
+  };
 
-const createImageViewerPopup = (link, name) => {
+ 
+  const createImageViewerPopup = (link, name) => {
     const existingPopup = document.querySelector('.popup--image-viewer');
     if (existingPopup) {
-        existingPopup.remove();  
+      existingPopup.remove();  
     }
 
     const template = document.querySelector('#popupTemplate').content.cloneNode(true);
@@ -133,84 +167,80 @@ const createImageViewerPopup = (link, name) => {
     imageViewerPopup.style.display = 'block';
 
     closeImageViewerPopupButton.addEventListener('click', () => {
-        imageViewerPopup.style.display = 'none';
-        imageViewerPopup.remove();
+      imageViewerPopup.style.display = 'none';
+      imageViewerPopup.remove();
     });
-};
+  };
 
-const addImageClickEvents = () => {
+ 
+  const addImageClickEvents = () => {
     document.querySelectorAll('.card-section__card-img').forEach(img => {
-        img.addEventListener('click', () => {
-            const imageLink = img.src;
-            const imageName = img.nextElementSibling.textContent;
-            createImageViewerPopup(imageLink, imageName);
-        });
+      img.addEventListener('click', () => {
+        const imageLink = img.src;
+        const imageName = img.nextElementSibling.textContent;
+        createImageViewerPopup(imageLink, imageName);
+      });
     });
-};
+  };
 
-
-
-
-const showInputError = (formElement, inputElement, errorMessage) => {
+  const showInputError = (formElement, inputElement, errorMessage) => {
     const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
     inputElement.classList.add("form__input-error");
     errorElement.textContent = errorMessage;
     errorElement.classList.add("form__input-error_active");
-};
+  };
   
-const hideInputError = (formElement, inputElement) => {
+  const hideInputError = (formElement, inputElement) => {
     const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
     inputElement.classList.remove("form__input_type_error");
     errorElement.classList.remove("form__input-error_active");
     errorElement.textContent = "";
-};
+  };
   
-const checkInputValidity = (formElement, inputElement) => {
+  const checkInputValidity = (formElement, inputElement) => {
     if (!inputElement.validity.valid) {
-        showInputError(formElement, inputElement, inputElement.validationMessage);
+      showInputError(formElement, inputElement, inputElement.validationMessage);
     } else {
-        hideInputError(formElement, inputElement);
+      hideInputError(formElement, inputElement);
     }
-};
+  };
   
-const hasInvalidInput = (inputList) => {
+  const hasInvalidInput = (inputList) => {
     return inputList.some((inputElement) => {
-        return !inputElement.validity.valid;
+      return !inputElement.validity.valid;
     });
-};
+  };
   
-const setEventListeners = (formElement) => {
+  const setEventListeners = (formElement) => {
     const inputList = Array.from(formElement.querySelectorAll(".form__input"));
     const buttonElement = formElement.querySelector(".form__submit");
     toggleButtonState(inputList, buttonElement);
     inputList.forEach((inputElement) => {
-        inputElement.addEventListener("input", function () {
-            checkInputValidity(formElement, inputElement);
-            toggleButtonState(inputList, buttonElement); 
-        });
+      inputElement.addEventListener("input", function () {
+        checkInputValidity(formElement, inputElement);
+        toggleButtonState(inputList, buttonElement); 
+      });
     });
-};
+  };
   
-const enableValidation = () => {
+  const enableValidation = () => {
     const formList = Array.from(document.querySelectorAll(".form"));
     formList.forEach((formElement) => {
-        formElement.addEventListener("submit", function (evt) {
-            evt.preventDefault();
-        });
+      formElement.addEventListener("submit", function (evt) {
+        evt.preventDefault();
+      });
   
-        const fieldsetList = Array.from(formElement.querySelectorAll(".form__set"));
+      const fieldsetList = Array.from(formElement.querySelectorAll(".form__set"));
   
-        fieldsetList.forEach((fieldset) => {
-            setEventListeners(fieldset);
-        });
+      fieldsetList.forEach((fieldset) => {
+        setEventListeners(fieldset);
+      });
     });
-};
+  };
   
-enableValidation();
+  enableValidation();
 
-
-
-const init = () => {
+  const init = () => {
     const editProfileButton = document.querySelector('#editProfileButton');
     const closeEditPopupButton = document.querySelector('#closeEditPopupButton');
     const editPopup = document.querySelector('#editPopup');
@@ -226,23 +256,21 @@ const init = () => {
     const imageUrlInput = document.querySelector('#imageUrlInput');
     const cardGrid = document.querySelector('.card-section__grid');
 
-
     const initialCards = [
-        { name: "Valle de Yosemite", link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/yosemite.jpg" },
-        { name: "Lago Louise", link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/lake-louise.jpg" },
-        { name: "Montañas Calvas", link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/bald-mountains.jpg" },
-        { name: "Latemar", link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/latemar.jpg" },
-        { name: "Parque Nacional de la Vanoise", link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/vanoise.jpg" },
-        { name: "Lago di Braies", link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/lago.jpg" }
+      { name: "Valle de Yosemite", link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/yosemite.jpg" },
+      { name: "Lago Louise", link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/lake-louise.jpg" },
+      { name: "Montañas Calvas", link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/bald-mountains.jpg" },
+      { name: "Latemar", link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/latemar.jpg" },
+      { name: "Parque Nacional de la Vanoise", link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/vanoise.jpg" },
+      { name: "Lago di Braies", link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/lago.jpg" }
     ];
 
     initializeCards(initialCards, cardGrid);
     handleEditProfile(editProfileButton, editPopup, editForm, authorTitle, authorText);
     handleImagePopup(openImagePopupButton, imagePopup, closeImagePopupButton, imageUrlInput, previewImage, imageForm, cardGrid);
     addImageClickEvents();
-};
+  };
 
 
-
-init();
-
+  document.addEventListener('DOMContentLoaded', init);
+});
