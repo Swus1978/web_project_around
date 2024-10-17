@@ -1,14 +1,14 @@
-// Overlay element
+
 const overlay = document.getElementById('overlay');
 
 const togglePopup = (popup) => {
     popup.classList.toggle('popup--open');
     if (popup.classList.contains('popup--open')) {
-        overlay.style.display = 'block'; // Show overlay
-        document.body.style.overflow = 'hidden'; // Prevent scrolling
+        overlay.style.display = 'block'; 
+        document.body.style.overflow = 'hidden'; 
     } else {
-        overlay.style.display = 'none'; // Hide overlay
-        document.body.style.overflow = 'auto'; // Restore scrolling
+        overlay.style.display = 'none';
+        document.body.style.overflow = 'auto'; 
     }
 };
 
@@ -34,8 +34,6 @@ const createCard = (title, imageUrl, cardGrid) => {
         card.addEventListener('transitionend', () => {
             card.remove();
         }, { once: true });
-    
-        window.getComputedStyle(card).opacity;
     });
 
     const cardTitle = document.createElement('h3');
@@ -158,9 +156,17 @@ const addImageClickEvents = () => {
     });
 };
 
-// Close popups when clicking on the overlay
-overlay.addEventListener('click', () => {
-    document.querySelectorAll('.popup--open').forEach(popup => togglePopup(popup));
+overlay.addEventListener('click', (event) => {
+    const isClickInsidePopup = event.target.closest('.popup');
+    if (!isClickInsidePopup) {
+        document.querySelectorAll('.popup--open').forEach(popup => togglePopup(popup));
+    }
+});
+
+document.querySelectorAll('.popup').forEach(popup => {
+    popup.addEventListener('click', (event) => {
+        event.stopPropagation();
+    });
 });
 
 const showInputError = (formElement, inputElement, errorMessage) => {
@@ -251,5 +257,5 @@ const init = () => {
     addImageClickEvents();
 };
 
-// Initialize app on page load
+
 document.addEventListener('DOMContentLoaded', init);
