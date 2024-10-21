@@ -4,13 +4,25 @@ const overlay = document.getElementById('overlay');
 const togglePopup = (popup) => {
     popup.classList.toggle('popup--open');
     if (popup.classList.contains('popup--open')) {
-        overlay.style.display = 'block'; 
-        document.body.style.overflow = 'hidden'; 
+        overlay.style.display = 'block';
+        document.body.style.overflow = 'hidden';
     } else {
         overlay.style.display = 'none';
-        document.body.style.overflow = 'auto'; 
+        document.body.style.overflow = 'auto';
     }
 };
+// editProfileButton.addEventListener('click', () => togglePopup(editPopup));
+// openPopupButton.addEventListener('click', () => togglePopup(imagePopup));
+
+
+// closeEditPopupButton.addEventListener('click', () => togglePopup(editPopup));
+// closeImagePopupButton.addEventListener('click', () => togglePopup(imagePopup));
+
+
+// overlay.addEventListener('click', () => {
+//     document.querySelectorAll('.popup--open').forEach(popup => togglePopup(popup));
+// });
+
 
 const createCard = (title, imageUrl, cardGrid) => {
     const card = document.createElement('div');
@@ -22,7 +34,7 @@ const createCard = (title, imageUrl, cardGrid) => {
     img.alt = title;
     img.dataset.imageSrc = imageUrl;
     img.addEventListener('click', () => {
-        createImageViewerPopup(imageUrl, title); 
+        createImageViewerPopup(imageUrl, title);
     });
 
     const deleteButton = document.createElement('button');
@@ -30,7 +42,7 @@ const createCard = (title, imageUrl, cardGrid) => {
     deleteButton.innerHTML = '<img src="./svg/Trash.svg" alt="Delete" title="Delete">';
     deleteButton.addEventListener('click', () => {
         card.classList.add('card-section__card--removing');
-        
+
         card.addEventListener('transitionend', () => {
             card.remove();
         }, { once: true });
@@ -124,7 +136,7 @@ const handleImagePopup = (openImagePopupButton, imagePopup, closeImagePopupButto
 const createImageViewerPopup = (link, name) => {
     const existingPopup = document.querySelector('.popup--image-viewer');
     if (existingPopup) {
-        existingPopup.remove();  
+        existingPopup.remove();
     }
 
     const template = document.querySelector('#popupTemplate').content.cloneNode(true);
@@ -136,15 +148,28 @@ const createImageViewerPopup = (link, name) => {
     popupImage.alt = name;
     popupImageName.textContent = name;
 
+
+    popupImage.onerror = () => {
+        popupImage.src = 'path/to/default/image.jpg';
+        popupImage.alt = 'Image not available';
+    };
+
     document.body.appendChild(template);
     const imageViewerPopup = document.querySelector('.popup--image-viewer');
     imageViewerPopup.style.display = 'block';
+    togglePopup(imageViewerPopup);
 
     closeImageViewerPopupButton.addEventListener('click', () => {
-        imageViewerPopup.style.display = 'none';
-        imageViewerPopup.remove();
+        if (imageViewerPopup) {
+            imageViewerPopup.style.display = 'none';
+            imageViewerPopup.remove();
+        }
+        togglePopup(imageViewerPopup);
     });
+
 };
+
+
 
 const addImageClickEvents = () => {
     document.querySelectorAll('.card-section__card-img').forEach(img => {
@@ -175,14 +200,14 @@ const showInputError = (formElement, inputElement, errorMessage) => {
     errorElement.textContent = errorMessage;
     errorElement.classList.add("form__input-error_active");
 };
-  
+
 const hideInputError = (formElement, inputElement) => {
     const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
     inputElement.classList.remove("form__input_type_error");
     errorElement.classList.remove("form__input-error_active");
     errorElement.textContent = "";
 };
-  
+
 const checkInputValidity = (formElement, inputElement) => {
     if (!inputElement.validity.valid) {
         showInputError(formElement, inputElement, inputElement.validationMessage);
@@ -190,13 +215,13 @@ const checkInputValidity = (formElement, inputElement) => {
         hideInputError(formElement, inputElement);
     }
 };
-  
+
 const hasInvalidInput = (inputList) => {
     return inputList.some((inputElement) => {
         return !inputElement.validity.valid;
     });
 };
-  
+
 const setEventListeners = (formElement) => {
     const inputList = Array.from(formElement.querySelectorAll(".form__input"));
     const buttonElement = formElement.querySelector(".form__submit");
@@ -204,26 +229,26 @@ const setEventListeners = (formElement) => {
     inputList.forEach((inputElement) => {
         inputElement.addEventListener("input", function () {
             checkInputValidity(formElement, inputElement);
-            toggleButtonState(inputList, buttonElement); 
+            toggleButtonState(inputList, buttonElement);
         });
     });
 };
-  
+
 const enableValidation = () => {
     const formList = Array.from(document.querySelectorAll(".form"));
     formList.forEach((formElement) => {
         formElement.addEventListener("submit", function (evt) {
             evt.preventDefault();
         });
-  
+
         const fieldsetList = Array.from(formElement.querySelectorAll(".form__set"));
-  
+
         fieldsetList.forEach((fieldset) => {
             setEventListeners(fieldset);
         });
     });
 };
-  
+
 enableValidation();
 
 const init = () => {

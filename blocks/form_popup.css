@@ -1,11 +1,10 @@
-
 .form__input:hover {
   border-bottom-color: #000;
 }
 
 .form__input:focus {
   border-bottom-color: #007DFF;
-  outline: none; 
+  outline: none;
 }
 
 .form__input:valid {
@@ -22,6 +21,14 @@
   font-size: 12px;
 }
 
+.form__image-preview {
+  display: none;
+}
+
+.form__image-preview[src]:not([src="#"]) {
+  display: block;
+}
+
 .form__input:invalid + .form__input-error {
   display: block;
 }
@@ -29,8 +36,6 @@
 .form__input:valid + .form__input-error {
   display: none;
 }
-
-
 
 .form {
   display: flex;
@@ -48,16 +53,32 @@
   box-sizing: border-box;
 }
 
+.popup__image {
+  border-radius: 10px;
+  width: 100%;
+  height: auto;
+  margin-bottom: 15px;
+  object-fit: cover;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
 
+.form__input-file-button {
+  margin-bottom: 15px; 
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+}
 
 @media screen and (max-width: 880px) {
   .form__input {
-      font-size: 14px;
+    font-size: 14px;
   }
 }
 
 @media screen and (max-width: 320px) {
   .form__input {
-      font-size: 12px;
+    font-size: 12px;
   }
 }
