@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -11,6 +12,7 @@
   <link rel="stylesheet" href="./pages/index.css" />
   <title>Around The U.S.</title>
 </head>
+
 <body>
   <div class="page">
     <nav class="logo">
@@ -24,7 +26,8 @@
         <div class="author__profile">
           <h2 class="author__title">Jacques Cousteau</h2>
           <h3 class="author__text">Explorador</h3>
-          <button class="author__button author__button-vector" id="editProfileButton" type="button" title="editProfileButton"></button>
+          <button class="author__button author__button-vector" id="editProfileButton" type="button"
+            title="editProfileButton"></button>
           <button class="author__button" id="openPopupButton" type="button" title="add"></button>
         </div>
       </header>
@@ -38,12 +41,14 @@
           <form class="form form_type_popup" name="editProfile">
             <label class="form__field" for="name">
               Título:
-              <input class="form__input" type="text" name="name" id="name" placeholder="Introduce tu título" autocomplete="name" required />
+              <input class="form__input" type="text" name="name" id="name" placeholder="Introduce tu título"
+                autocomplete="name" required />
               <span class="form__input-error text-input-error">Por favor, rellena este campo.</span>
             </label>
             <label class="form__field" for="text">
               Texto:
-              <input class="form__input" type="text" name="text" id="text" placeholder="Introduce tu texto" autocomplete="off" required />
+              <input class="form__input" type="text" name="text" id="text" placeholder="Introduce tu texto"
+                autocomplete="off" required />
               <span class="form__input-error text-input-error">Por favor, rellena este campo.</span>
             </label>
             <button class="button popup__button-submit" type="submit">
@@ -61,12 +66,14 @@
           <form class="form form_type_popup" name="addImage">
             <label class="form__field" for="imageTitle">
               Título:
-              <input class="form__input" type="text" name="name" id="imageTitle" placeholder="Introduce tu título" autocomplete="off" required />
+              <input class="form__input" type="text" name="name" id="imageTitle" placeholder="Introduce tu título"
+                autocomplete="off" required />
               <span class="form__input-error text-input-error">Por favor, rellena este campo.</span>
             </label>
             <label class="form__field" for="imageUrlInput">
               Pegar URL de imagen:
-              <input class="form__input" type="url" name="imageUrl" id="imageUrlInput" placeholder="https://example.com/image.jpg" autocomplete="url" required />
+              <input class="form__input" type="url" name="imageUrl" id="imageUrlInput"
+                placeholder="https://example.com/image.jpg" autocomplete="url" required />
               <span class="form__input-error url-input-error">Por favor, introduce una direccion web válida.</span>
             </label>
             <div class="form__preview-container">
@@ -95,4 +102,5 @@
   </div>
   <script src="./js/index.js"></script>
 </body>
+
 </html>

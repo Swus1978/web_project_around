@@ -1,28 +1,10 @@
-
 const overlay = document.getElementById('overlay');
 
 const togglePopup = (popup) => {
-    popup.classList.toggle('popup--open');
-    if (popup.classList.contains('popup--open')) {
-        overlay.style.display = 'block';
-        document.body.style.overflow = 'hidden';
-    } else {
-        overlay.style.display = 'none';
-        document.body.style.overflow = 'auto';
-    }
+    const isOpen = popup.classList.toggle('popup--open');
+    overlay.style.display = isOpen ? 'block' : 'none';
+    document.body.style.overflow = isOpen ? 'hidden' : 'auto';
 };
-// editProfileButton.addEventListener('click', () => togglePopup(editPopup));
-// openPopupButton.addEventListener('click', () => togglePopup(imagePopup));
-
-
-// closeEditPopupButton.addEventListener('click', () => togglePopup(editPopup));
-// closeImagePopupButton.addEventListener('click', () => togglePopup(imagePopup));
-
-
-// overlay.addEventListener('click', () => {
-//     document.querySelectorAll('.popup--open').forEach(popup => togglePopup(popup));
-// });
-
 
 const createCard = (title, imageUrl, cardGrid) => {
     const card = document.createElement('div');
@@ -42,7 +24,6 @@ const createCard = (title, imageUrl, cardGrid) => {
     deleteButton.innerHTML = '<img src="./svg/Trash.svg" alt="Delete" title="Delete">';
     deleteButton.addEventListener('click', () => {
         card.classList.add('card-section__card--removing');
-
         card.addEventListener('transitionend', () => {
             card.remove();
         }, { once: true });
@@ -70,12 +51,14 @@ const initializeCards = (initialCards, cardGrid) => {
     initialCards.forEach(card => createCard(card.name, card.link, cardGrid));
 };
 
-const handleEditProfile = (editProfileButton, editPopup, editForm, authorTitle, authorText) => {
+const handleEditProfile = (editProfileButton, closeEditPopupButton, editPopup, editForm, authorTitle, authorText) => {
     editProfileButton.addEventListener('click', () => {
         editForm.querySelector('input[name="name"]').value = authorTitle.textContent;
         editForm.querySelector('input[name="text"]').value = authorText.textContent;
         togglePopup(editPopup);
     });
+
+    closeEditPopupButton.addEventListener('click', () => togglePopup(editPopup));
 
     editForm.addEventListener('submit', (event) => {
         event.preventDefault();
@@ -148,7 +131,6 @@ const createImageViewerPopup = (link, name) => {
     popupImage.alt = name;
     popupImageName.textContent = name;
 
-
     popupImage.onerror = () => {
         popupImage.src = 'path/to/default/image.jpg';
         popupImage.alt = 'Image not available';
@@ -157,19 +139,16 @@ const createImageViewerPopup = (link, name) => {
     document.body.appendChild(template);
     const imageViewerPopup = document.querySelector('.popup--image-viewer');
     imageViewerPopup.style.display = 'block';
-    togglePopup(imageViewerPopup);
+    overlay.style.display = 'block'; 
 
     closeImageViewerPopupButton.addEventListener('click', () => {
         if (imageViewerPopup) {
             imageViewerPopup.style.display = 'none';
             imageViewerPopup.remove();
+            overlay.style.display = 'none'; 
         }
-        togglePopup(imageViewerPopup);
     });
-
 };
-
-
 
 const addImageClickEvents = () => {
     document.querySelectorAll('.card-section__card-img').forEach(img => {
@@ -185,6 +164,7 @@ overlay.addEventListener('click', (event) => {
     const isClickInsidePopup = event.target.closest('.popup');
     if (!isClickInsidePopup) {
         document.querySelectorAll('.popup--open').forEach(popup => togglePopup(popup));
+        overlay.style.display = 'none'; 
     }
 });
 
@@ -220,6 +200,14 @@ const hasInvalidInput = (inputList) => {
     return inputList.some((inputElement) => {
         return !inputElement.validity.valid;
     });
+};
+
+const toggleButtonState = (inputList, buttonElement) => {
+    if (hasInvalidInput(inputList)) {
+        buttonElement.disabled = true;
+    } else {
+        buttonElement.disabled = false;
+    }
 };
 
 const setEventListeners = (formElement) => {
@@ -277,10 +265,9 @@ const init = () => {
     ];
 
     initializeCards(initialCards, cardGrid);
-    handleEditProfile(editProfileButton, editPopup, editForm, authorTitle, authorText);
+    handleEditProfile(editProfileButton, closeEditPopupButton, editPopup, editForm, authorTitle, authorText);
     handleImagePopup(openImagePopupButton, imagePopup, closeImagePopupButton, imageUrlInput, previewImage, imageForm, cardGrid);
     addImageClickEvents();
 };
-
 
 document.addEventListener('DOMContentLoaded', init);
