@@ -18,7 +18,7 @@
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     width: 430px;
-    z-index: 1;
+    z-index: 1000;
 }
 
 .overlay {
@@ -141,6 +141,22 @@
     border-bottom-style: solid;
 }
 
+#popupImageName {
+    position: relative;
+    margin-top: 10px;
+    background-color: #fff;
+    color: #000;
+    font-weight: 900;
+    font-size: 14px;
+    line-height: 29.05px;
+    width: 100px;
+    height: 23px;
+    font-family: 'Inter';
+    z-index: 1000;
+ 
+}
+
+
 .popup--image-viewer .popup__image {
     position: relative;
     top: 80px;
@@ -196,16 +212,24 @@
     .popup {
         width: 282px;
         height: 322px;
-        left: 35.5%;
+        left: 15%;
+        top: 50%
     }
     .popup__button-submit {
         width: 238px;
         height: 46px;
-        margin-left: 100px;
+        margin-left: 200px;
+        margin-top: 20px;
     }
     .popup__close-button {
-        left: 230px;
+        left: 420px;
         width: 26px;
         height: 26px;
     }
+    .overlay{
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.7);
+    }
+    
 }
