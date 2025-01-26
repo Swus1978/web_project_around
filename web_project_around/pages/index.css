@@ -1,0 +1,10 @@
+@import url("../vendor/normalize.css");
+
+
+@import url("../blocks/logo.css");
+@import url("../blocks/author.css");
+@import url("../blocks/card.css");
+@import url("../blocks/page.css");
+@import url("../blocks/popup.css");
+@import url("../blocks/form_popup.css");
+@import url("../blocks/footer.css");

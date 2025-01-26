@@ -1,0 +1,143 @@
+.card-section {
+    max-width: 1280px;
+    margin: 0 auto;
+    margin: 250px;
+
+    
+}
+.card-section__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 282px);
+    gap: 20px;
+    
+}
+
+.card-section__card {
+    position: relative;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    text-align: center;
+    border-radius: 10px;
+    
+
+}
+
+.card__visually-hidden {
+    display: none;
+}
+
+.card-section__card-img {
+    display: block;
+    max-width: 282px;
+    height: 282px;
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+    object-fit: cover;
+}
+
+.popup__content-image {
+    display: block;
+    max-width: 282px;
+    height: 282px;
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+    object-fit: cover;
+    margin-bottom: 350px;
+}
+
+.card-section__card-title {
+    justify-self: start;
+    align-self: start;
+    margin-right: 80px;
+    padding: 10px;
+    color: #000;
+    background-color: #fff;
+    display: inline-block;
+}
+
+.card-section__button {
+    display: inline-block;
+    position: relative;
+    color: #fff;
+    border: none;
+    background: none;
+    cursor: pointer;
+  
+}
+
+.card-section__card--removing {
+    opacity: 0;
+    transform: scale(0.95);
+}
+
+
+.card-section__button-like {
+    border: none;
+    background: url(https://practicum-content.s3.us-west-1.amazonaws.com/web-code/dom/moved_heart.svg) center no-repeat;
+    background-size: 100%;
+    cursor: pointer;
+    width: 21px;
+    height: 19px;
+    position: absolute;
+    top: 88%;
+    right: 10px;
+    transform: translateY(-50%);
+    opacity: 0.5;
+    transition: 0.3s;
+  }
+  
+  .card-section__button-like:hover {
+    transform: scale(1.3);
+  }
+  
+  .card-section__button-like--active {
+    opacity: 1;
+    background: url(https://practicum-content.s3.us-west-1.amazonaws.com/web-code/dom/moved_heart-filled.svg) center no-repeat;
+  }
+
+
+.card-section__button-delete {
+    position: absolute;
+    bottom: 322px;
+    left: 245px;
+    width: 20px;
+    height: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    background-image: url('../svg/Trash.svg');
+    background-repeat: no-repeat;
+    background-size: 20px;
+}
+
+@media (max-width: 1280px) {
+    .card-section__grid {
+        grid-template-columns: repeat(3, 282px);
+    }
+}
+
+@media (max-width: 880px) {
+    .card-section__grid {
+        grid-template-columns: 282px;
+        
+    }
+    .card-section__card {
+        top: 100px;
+    }
+}
+
+@media (max-width: 320px) {
+    .card-section__grid {
+        grid-template-columns: 282px;
+    }
+    .card-section__card {
+        top: 100px;
+        transform: translate(-70%, -0%);
+    }
+    .card-section__button-like {
+        top: 320px;
+        margin-right: 20px;
+    }
+
+    
+}
