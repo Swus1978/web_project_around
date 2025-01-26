@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="author" content="Juan Quinones" />
+  <meta name="description" content="Around The U.S." />
+  <meta name="keywords" content="around the united states, around the states, student tripleten" />
+  <link rel="preconnect" href="https://rsms.me/" />
+  <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+  <link rel="stylesheet" href="./pages/index.css" />
+  <title>Around The U.S.</title>
+</head>
+
+<body>
+  <div class="page">
+    <nav class="logo">
+      <h1 class="logo__title">Around</h1>
+      <p class="logo__paragraph">The U.S.</p>
+      <div class="logo__line"></div>
+    </nav>
+    <main>
+      <header class="author">
+        <img class="author__image" src="./images/image.jpg" alt="jaques" />
+        <div class="author__profile">
+          <h2 class="author__title">Jacques Cousteau</h2>
+          <h3 class="author__text">Explorador</h3>
+          <button class="author__button author__button-vector" id="editProfileButton" type="button"
+            title="editProfileButton"></button>
+          <button class="author__button" id="openPopupButton" type="button" title="add"></button>
+        </div>
+      </header>
+      <div class="overlay" id="overlay"></div>
+      <section class="popup" id="editPopup" role="dialog" aria-labelledby="editPopupTitle">
+        <div class="popup__overlay"></div>
+        <div class="popup__content">
+            <h2 class="visually-hidden">Popup Form</h2>
+            <button class="button popup__close-button" id="closeEditPopupButton" type="button"></button>
+            <h3 id="editPopupTitle" class="popup__title">Editar perfil</h3>
+            <form class="form form_type_popup" name="editProfile">
+                <label class="form__field" for="editName">
+                    Título:
+                    <input class="form__input" type="text" name="name" id="editName" placeholder="Introduce tu título"
+                        autocomplete="name" required />
+                    <span class="form__input-error text-input-error">Por favor, rellena este campo.</span>
+                </label>
+                <label class="form__field" for="editText">
+                    Texto:
+                    <input class="form__input" type="text" name="text" id="editText" placeholder="Introduce tu texto"
+                        autocomplete="off" required />
+                    <span class="form__input-error text-input-error">Por favor, rellena este campo.</span>
+                </label>
+                <button class="button popup__button-submit" type="submit">
+                    Guardar
+                </button>
+            </form>
+        </div>
+    </section>
+
+      <div class="overlay" id="overlay"></div>
+      <section class="popup" id="imagePopup" role="dialog" aria-labelledby="imagePopupTitle">
+        <div class="popup__overlay"></div>
+        <div class="popup__content">
+          <h2 class="visually-hidden">Popup Form</h2>
+          <button class="button popup__close-button" id="closeImagePopupButton" type="button"></button>
+          <h3 id="imagePopupTitle" class="popup__title">Agregar Imagen</h3>
+          <form class="form form_type_popup" name="addImage">
+            <label class="form__field" for="imageTitle">
+              Título:
+              <input class="form__input" type="text" name="name" id="imageTitle" placeholder="Introduce tu título"
+                autocomplete="off" required />
+              <span class="form__input-error text-input-error">Por favor, rellena este campo.</span>
+            </label>
+            <label class="form__field" for="imageUrlInput">
+              Pegar URL de imagen:
+              <input class="form__input" type="url" name="imageUrl" id="imageUrlInput"
+                placeholder="https://example.com/image.jpg" autocomplete="url" required />
+              <span class="form__input-error url-input-error">Por favor, introduce una direccion web válida.</span>
+            </label>
+            <div class="form__preview-container">
+              <img class="form__image-preview" id="previewImage" src="#" alt="Vista previa de la imagen" />
+            </div>
+            <button class="button popup__button-submit" type="submit">
+              Crear
+            </button>
+          </form>
+        </div>
+      </section>
+      <template id="popupTemplate">
+        <div class="popup popup--image-viewer">
+            <div class="popup__overlay"></div>
+            <div class="popup__content-image">
+                <button class="popup__close-template-button" id="closeImageViewerPopupButton" title="Close"></button>
+                <img id="popupImage" class="popup__image" alt="Popup Image" />
+                <div id="popupImageName" class="popup__image-name"></div>
+            </div>
+        </div>
+    </template>
+    
+      <section class="card-section">
+        <div class="card-section__grid"></div>
+      </section>
+    </main>
+    <footer class="footer">
+      <h3 class="footer__title">&copy;2024 Around The U.S.</h3>
+    </footer>
+  </div>
+  <template id="cardTemplate">
+    <div class="card-section__card">
+      <img class="card-section__card-img" src="" alt="">
+      <button class="card-section__button-delete"></button>
+      <h3 class="card-section__card-title"></h3>
+      <button class="card-section__button-like"></button>
+    </div>
+  </template>
+  <script type="module" src="./js/index.js"></script>
+</body>
+
+</html>
